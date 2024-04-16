@@ -74,7 +74,7 @@ body {
 }
 
 .hero__title {
-  @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold;
+  @apply 2xl:text-[60px] sm:text-[64px] text-[50px] font-extrabold;
 }
 
 .hero__subtitle {
