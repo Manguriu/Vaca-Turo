@@ -9,23 +9,8 @@ const FeaturedCars = () => {
         <h1 className="text-4xl font-extrabold"> Featured cars </h1>
         <p>Here are some of our best cars </p>
       </div>
-      <div className="flex flex-wrap justify-between ">
-        <div>
-          <CarCard />
-        </div>
-        <div>
-          <CarCard />
-        </div>
-        <div>
-          <CarCard />
-        </div>
-        <div>
-          <CarCard />
-        </div>
-        <div>
-          <CarCard />
-        </div>
-        <div>
+      <div>
+        <div className="">
           <CarCard />
         </div>
       </div>

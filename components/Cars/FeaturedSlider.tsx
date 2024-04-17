@@ -11,12 +11,12 @@ export default function FeaturedSlider() {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1,
+      slidesToScroll: 2,
     };
     return (
       <Slider {...settings} className='mt-5 padding-x padding-y max-width'>
         <div>
-          <FeaturedCards />
+         <FeaturedCards />
         </div>
         <div>
         <FeaturedCards />

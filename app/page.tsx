@@ -1,14 +1,13 @@
-import { CarsByMake, FeaturedCars } from "@/components/Index";
+import { CarsByMake, FeaturedCars, Host } from "@/components/Index";
 import { Hero } from "@/components/Index";
 import FeaturedSlider from "@/components/Cars/FeaturedSlider";
 
 
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
-      <div>
+    <main className="overflow-hidden bg-white">
+      <div className="bg-slate-100">
         <Hero />
       </div>
 
@@ -16,12 +15,16 @@ export default function Home() {
         <FeaturedSlider />
       </div>
 
-      <div className="">
+      <div className="bg-slate-100">
         <FeaturedCars />
       </div>
 
-      <div>
+      <div className="bg-slate-100">
       <CarsByMake  />
+      </div>
+
+      <div className="bg-slate-100">
+      <Host />
       </div>
     </main>
   );

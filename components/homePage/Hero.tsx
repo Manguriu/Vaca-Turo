@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <div className="hero">
-      <div className="flex-1 pt-36 padding-x">
+      <div className="flex-1 pt-20 xl:pt-10 padding-x">
         <h1 className="hero__title">
           Find your drive Car rentals from trusted, local hosts
         </h1>

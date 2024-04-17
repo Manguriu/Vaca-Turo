@@ -6,6 +6,7 @@ import CustomFilter from "./CustomFilter";
 import SearchBar from "./SearchBar";
 import FeaturedCars from "./Cars/FeaturedCars";
 import CarsByMake from "./Cars/CarsByMake";
+import Host from "./Host/Host";
 
 
 
@@ -18,4 +19,5 @@ CustomFilter,
 SearchBar,
 FeaturedCars,
 CarsByMake,
+Host
 }

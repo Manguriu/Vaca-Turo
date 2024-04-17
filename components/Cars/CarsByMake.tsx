@@ -8,7 +8,19 @@ const CarsByMake = () => {
       <h1 className="text-4xl font-extrabold"> Browse cars by make. </h1>
       <p>Here are some of our best cars with your desired model enjoy our services</p>
     </div>
-    <div className="flex flex-wrap justify-between ">
+    <div className="flex flex-wrap gap-4 mt-10 justify-center">
+        <div>
+          <CarsMakeCard />
+        </div>
+        <div>
+          <CarsMakeCard />
+        </div>
+        <div>
+          <CarsMakeCard />
+        </div>
+        <div>
+          <CarsMakeCard />
+        </div>
         <div>
           <CarsMakeCard />
         </div>
