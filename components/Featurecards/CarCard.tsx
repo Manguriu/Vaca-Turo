@@ -3,6 +3,7 @@ import Image from "next/image";
 import "./card.css";
 import { featuredCarsList } from "@/constants";
 import CustomButton from "../CustomButton";
+import { title } from "process";
 
 const CarCard = () => {
   return (
@@ -10,7 +11,7 @@ const CarCard = () => {
       <div className="page-inner ">
         <div className="flex flex-wrap justify-between ">
           {featuredCarsList.map((details) => (
-            <div className="el-wrapper">
+            <div key= {title} className="el-wrapper">
               <div className="box-up">
                 <img className="img" src={details.photo} alt="" />
                 <div className="img-info">
