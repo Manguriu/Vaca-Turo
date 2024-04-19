@@ -147,9 +147,9 @@ body {
   /* ease-out */
   width: 660px;
   height: 100%;
-  background-color: #007FFF;
+  background-color: #1da1f2;
   position: absolute;
-  left: -659px;
+  left: -670px;
 }
 
 .h-bg .h-bg-inner {
@@ -271,7 +271,7 @@ body {
   display: block;
   position: absolute;
   top: 50%;
-  left: 110%;
+  left: 120%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);

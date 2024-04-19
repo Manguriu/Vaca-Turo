@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { CustomFilter, SearchBar } from "../Index";
 import CarCard from "../Featurecards/CarCard";
+import Link from "next/link";
 
 const FeaturedCars = () => {
   return (
@@ -10,9 +12,7 @@ const FeaturedCars = () => {
         <p>Here are some of our best cars </p>
       </div>
       <div>
-        <div className="">
-          <CarCard />
-        </div>
+        <CarCard />
       </div>
     </div>
   );

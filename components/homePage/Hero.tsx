@@ -2,9 +2,11 @@
 import React from "react";
 import CustomButton from "../CustomButton";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
-  const handleScroll = () => {};
+  const router = useRouter();
 
   return (
     <div className="hero">
@@ -16,11 +18,13 @@ const Hero = () => {
           Get the best experience in the car rental business with us King vaca
           Car rentals
         </p>
-        <CustomButton
-          title="Explore Cars"
-          containerStyles="bg-primary-blue text-white rounded-full mt-10"
-          handleClick={handleScroll}
-        />
+
+        <button
+          className="mt-5 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+          onClick={() => router.push("/ExploreCars")}
+        >
+          Explore Cars
+        </button>
       </div>
       <div className="hero__image-container">
         <div className="hero__image">
