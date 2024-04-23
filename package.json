@@ -32,6 +32,7 @@
     "@types/react-dom": "^18",
     "@types/react-slick": "^0.23.13",
     "daisyui": "^4.10.2",
+    "date-picker-svelte": "^2.12.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.1",
     "eslint-plugin-storybook": "^0.8.0",
