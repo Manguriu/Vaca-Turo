@@ -45,7 +45,7 @@ const CarsMakeCard = () => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Jeep</h2>
+        <h2 className="font-bold text-xl">Jeep</h2>
       </div>
     </button>
   );
