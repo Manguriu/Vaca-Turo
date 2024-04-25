@@ -1,8 +1,6 @@
 import { CarsByMake, FeaturedCars, Host } from "@/components/Index";
 import { Hero } from "@/components/Index";
-import FeaturedSlider from "@/components/Cars/FeaturedSlider";
-
-
+// import FeaturedSlider from "@/components/Cars/FeaturedSlider";
 
 export default function Home() {
   return (
@@ -11,20 +9,20 @@ export default function Home() {
         <Hero />
       </div>
 
-      <div className="bg-slate-200 ">
+      {/* <div className="bg-slate-200 ">
         <FeaturedSlider />
-      </div>
+      </div> */}
 
-      <div className="bg-slate-100">
+      <div className="bg-slate-100" id="FeaturedCars">
         <FeaturedCars />
       </div>
 
-      <div className="bg-slate-100">
-      <CarsByMake  />
+      <div className="bg-slate-100" id="cars">
+        <CarsByMake />
       </div>
 
-      <div className="bg-slate-100">
-      <Host />
+      <div className="bg-slate-100" id="FeaturedHomes">
+        <Host />
       </div>
     </main>
   );

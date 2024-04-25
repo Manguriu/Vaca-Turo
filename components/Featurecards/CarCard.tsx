@@ -1,8 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import "./card.css";
 import { featuredCarsList } from "@/constants";
-import CustomButton from "../CustomButton";
 import { title } from "process";
 import { useRouter } from "next/navigation";
 
@@ -15,7 +13,7 @@ const CarCard = () => {
           {featuredCarsList.map((details) => (
             <div key={title} className="el-wrapper">
               <div className="box-up">
-                <img className="img" src={details.photo} alt="" />
+                <img className="img object-cover" src={details.photo} alt="" />
                 <div className="img-info">
                   <div className="info-inner">
                     <span className="p-name">{details.title}</span>
@@ -35,13 +33,6 @@ const CarCard = () => {
                 <a className="cart rounded-lg" href="#">
                   <span className="price">{details.price}</span>
                   <span className="add-to-cart">
-                    {/* <button
-                      onClick={() => router.push("/CarDetails")}
-                      className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    >
-                    Book
-                    </button> */}
-
                     <button
                       onClick={() => router.push("/CarDetails")}
                       type="button"
