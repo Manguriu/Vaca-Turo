@@ -6,7 +6,7 @@ export default function ExploreCarsMake() {
       <div className="">
         <div className="flex flex-col justify-center items-center mt-20">
           <h2 className="font-bold">
-            Discover Turo, the world's largest car sharing marketplace
+            Discover Turo, the worlds largest car sharing marketplace
           </h2>
           <h1 className="text-4xl mt-4 font-bold">Rent a Jeep</h1>
         </div>
