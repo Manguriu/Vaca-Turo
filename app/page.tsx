@@ -5,7 +5,7 @@ import { Hero } from "@/components/Index";
 export default function Home() {
   return (
     <main className="overflow-hidden bg-white">
-      <div className="bg-slate-100">
+      <div className="bg-slate-100 h-screen">
         <Hero />
       </div>
 
@@ -13,7 +13,7 @@ export default function Home() {
         <FeaturedSlider />
       </div> */}
 
-      <div className="bg-slate-100" id="FeaturedCars">
+      <div className="bg-slate-100 h-screen" id="FeaturedCars">
         <FeaturedCars />
       </div>
 

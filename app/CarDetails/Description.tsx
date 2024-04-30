@@ -28,7 +28,7 @@ const Description = () => {
             prices. The 5 Seater Toyota Voxy / Noah Van is a multi passenger van
             with balanced combination of economy, luxury and performance. The
             vans pleasing interior, relaxed cabin, space, safety features makes
-            it an attractive solution to many of today’s traffic and
+            it an attractive solution to many of todays traffic and
             environmental problems. Quick acceleration, excellent handling and a
             high level of braking performance all add up to easy control of the
             vehicle, assisting in safe motoring. Rent 5 Seater Toyota Voxy /
@@ -39,7 +39,6 @@ const Description = () => {
             offer other safe and reliable imported vans for hire.
           </p>
         </div>
-
 
         <h2 className="mt-10 text-2xl underline font-semibold">
           {" "}
@@ -84,7 +83,6 @@ const Description = () => {
           </div>
         </div>
 
-        
         <h2 className="mt-10 text-2xl font-semibold">Location</h2>
         <div>
           <p>Tesla</p>
@@ -92,15 +90,18 @@ const Description = () => {
 
         <h2 className="mt-10 text-2xl font-semibold">Reviews</h2>
         <div className="mt-4">
-          <div className=""> <Reviews /></div>
+          <div className="">
+            {" "}
+            <Reviews />
+          </div>
         </div>
 
         <h2 className="mt-10 text-2xl font-semibold">Comments</h2>
         <div className="mt-4">
-        <div className=""><Comments /></div>
+          <div className="">
+            <Comments />
+          </div>
         </div>
-        
-        
       </div>
       <div className="px-4 py-4 w-[30%]">
         <h1 className="text-xl">

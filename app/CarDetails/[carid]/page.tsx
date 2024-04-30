@@ -1,5 +1,5 @@
 import { FeaturedCars } from "@/components/Index";
-import Description from "./Description";
+import Description from "../Description";
 
 const carImageURL =
   "https://images.turo.com/media/vehicle/images/Tlhf9YyOT2OVd3k6QrKayQ.480x270.jpg";

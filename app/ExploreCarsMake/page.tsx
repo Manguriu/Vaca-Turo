@@ -1,3 +1,4 @@
+"use client";
 import Explorecard from "./Explorecard";
 
 export default function ExploreCarsMake() {
@@ -11,12 +12,6 @@ export default function ExploreCarsMake() {
           <h1 className="text-4xl mt-4 font-bold">Rent a Jeep</h1>
         </div>
         <div className="flex gap-6 justify-center items-center mt-[10rem]">
-          <div>
-            <Explorecard />
-          </div>
-          <div>
-            <Explorecard />
-          </div>
           <div>
             <Explorecard />
           </div>
