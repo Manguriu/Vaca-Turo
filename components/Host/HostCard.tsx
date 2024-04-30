@@ -9,11 +9,8 @@ const HostCard = () => {
   return (
     <div className="flex flex-wrap justify-between gap-2">
       {HouseDetailsList.map((details) => (
-        <Link href={`/HouseDetails/${details.id}`}>
-          <div
-            className="card w-80 bg-base-100 shadow-xl"
-            key={details.HouseName}
-          >
+        <Link href={`/HouseDetails/${details.id}`} key={details.id}>
+          <div className="card w-80 bg-base-100 shadow-xl">
             <figure>
               <img src={details.HouseDetailsListimage} alt="house" />
             </figure>
