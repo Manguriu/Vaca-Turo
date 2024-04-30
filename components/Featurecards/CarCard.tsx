@@ -11,7 +11,7 @@ const CarCard = () => {
       <div className="page-inner ">
         <div className="flex flex-wrap justify-between ">
           {featuredCarsList.map((details) => (
-            <div key={title} className="el-wrapper">
+            <div key={details.id} className="el-wrapper">
               <div className="box-up">
                 <img className="img object-cover" src={details.photo} alt="" />
                 <div className="img-info">
