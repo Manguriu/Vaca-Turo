@@ -11,32 +11,8 @@ const CarsByMake = () => {
           services
         </p>
       </div>
-      <div className="flex flex-wrap gap-4 mt-10 justify-center">
-        <div>
-          <CarsMakeCard />
-        </div>
-        <div>
-          <CarsMakeCard />
-        </div>
-        <div>
-          <CarsMakeCard />
-        </div>
-        <div>
-          <CarsMakeCard />
-        </div>
-        <div>
-          <CarsMakeCard />
-        </div>
-        <div>
-          <CarsMakeCard />
-        </div>
-        <div>
-          <CarsMakeCard />
-        </div>
-        <div>
-          <CarsMakeCard />
-        </div>
-        <div>
+      <div className="">
+        <div className="flex flex-wrap gap-4 mt-10 justify-center">
           <CarsMakeCard />
         </div>
       </div>

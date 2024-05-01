@@ -288,3 +288,37 @@ export const SliderList = [
       "Book a roomy truck or SUV to ease your errand day stress, or to motivate your moving day.",
   },
 ];
+
+export const CarMakeList = [
+  {
+    id: 30,
+    make: "Toyota",
+    makeImage: "/toyotaLogo.png",
+  },
+  {
+    id: 30,
+    make: "Mazda",
+    makeImage: "/mazdaLogo.png",
+  },
+  {
+    id: 30,
+    make: "Audi",
+    makeImage: "/audiLogo.png",
+  },
+  {
+    id: 30,
+    make: "Jeep",
+    makeImage:
+      "https://static.autox.com/uploads/2021/03/Jeep-Wrangler-Image-4-.jpg",
+  },
+  {
+    id: 30,
+    make: "Subaru",
+    makeImage: "/subaruLogo.png",
+  },
+  {
+    id: 30,
+    make: "BMW",
+    makeImage: "/bmwLogo.png",
+  },
+];
