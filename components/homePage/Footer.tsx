@@ -35,15 +35,18 @@ const Footer = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="flex justify-between items-center md:flex md:flex-wrap-reverse mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
+        <p>@2024 KingVac All rights reserved </p>
+        <div className="flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10 ">
+          <Link href="/" className="text-gray-500">
+            Private policy
+          </Link>
+          <Link href="/" className="text-gray-500">
+            Terms of use
+          </Link>
         </div>
-        <div className="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
-          <p>@2024 KingVac All rights reserved </p>
-            <div className="footer__copyrights-link">
-              <Link href="/" className="text-gray-500">Private policy</Link>
-              <Link href="/" className="text-gray-500">Terms of use</Link>
-            </div>
-        </div>
-     
+      </div>
     </footer>
   );
 };

@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const HostCard = () => {
   const router = useRouter();
   return (
-    <div className="flex flex-wrap justify-between gap-2">
+    <div className="flex flex-wrap justify-center gap-2 max-lg:gap-10">
       {HouseDetailsList.map((details) => (
         <Link href={`/HouseDetails/${details.id}`} key={details.id}>
           <div className="card w-80 bg-base-100 shadow-xl">
@@ -19,13 +19,13 @@ const HostCard = () => {
                 {details.HouseName}
                 <div className="badge badge-secondary">New</div>
               </h2>
-              <p>{details.Shortdescription}</p>
+              <p className="max-lg:hidden">{details.Shortdescription}</p>
               <div className="card-actions justify-end mt-2">
                 <button
                   onClick={() => router.push(`/HouseDetails/${details.id}`)}
                   data-twe-ripple-init
                   data-twe-ripple-color="light"
-                  className="mb-2 flex rounded bg-[#1da1f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                  className="max-lg:w-full max-lg:justify-center mb-2 flex rounded bg-[#1da1f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
                 >
                   View
                 </button>

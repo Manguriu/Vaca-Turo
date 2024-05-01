@@ -6,26 +6,14 @@ export const footerLinks = [
     links: [
       { title: "How it works", url: "/" },
       { title: "Featured", url: "/" },
-      { title: "Partnership", url: "/" },
-      { title: "Bussiness Relation", url: "/" },
     ],
   },
-  {
-    title: "Company",
-    links: [
-      { title: "something 1", url: "/" },
-      { title: "something 2", url: "/" },
-      { title: "something 3", url: "/" },
-      { title: "something 4", url: "/" },
-    ],
-  },
+
   {
     title: "Socials",
     links: [
-      { title: "Discord", url: "/" },
       { title: "Instagram", url: "/" },
       { title: "Twitter", url: "/" },
-      { title: "Facebook", url: "/" },
     ],
   },
 ];
