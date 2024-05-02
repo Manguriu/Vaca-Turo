@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="flex flex-col xl:flex-row gap-5 relative z-0 max-w-[1440px] mx-auto items-center justify-center ">
+    <div className="flex flex-col xl:flex-row gap-5 relative z-0 max-w-[1440px] mx-auto items-center justify-center max-lg:mt-[6rem]">
       <div className="flex-1 sm:px-16 px-6 text-center xl:text-left">
         <h1 className="2xl:text-[60px] sm:text-[64px] text-[50px] font-extrabold">
           Find your drive Car rentals from trusted, local hosts

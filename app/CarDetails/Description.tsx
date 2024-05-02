@@ -5,9 +5,9 @@ import Comments from "./Comments";
 
 const Description = () => {
   return (
-    <div className="flex justify-between">
-      <div className="px-4 py-4 ">
-        <h1 className="text-4xl font-bold">Tesla Model 3 2021</h1>
+    <div className="flex justify-between max-lg:flex-wrap">
+      <div className="px-4 py-4">
+        <h1 className="text-4xl font-bold ">Tesla Model 3 2021</h1>
         <h4 className="mt-2">Standard Range Plus</h4>
         <h1 className="flex text-xl mt-2 items-center gap-1">
           <span className="font-bold">4.5</span>
@@ -44,7 +44,7 @@ const Description = () => {
           {" "}
           Car Features
         </h2>
-        <div className=" grid grid-cols-4 gap-4 justify-between mt-4">
+        <div className=" grid grid-cols-4 gap-4 justify-between mt-4 max-lg:grid-cols-3">
           <div className="flex gap-1">
             <img src="/AWD.png" alt="" className="h-5" />
             <h2> AWD </h2>
@@ -110,9 +110,6 @@ const Description = () => {
           <span> / day</span>
         </h1>
         <div className="mt-5">
-          <div>
-            <h4 className="text-xl text-cyan-400">Pick up & Return location</h4>
-          </div>
           <div className="mb-4 mt-4">
             <h4 className="text-xl text-cyan-400">Trip start & Trip end </h4>
           </div>

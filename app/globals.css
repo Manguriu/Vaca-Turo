@@ -145,3 +145,25 @@
 /* END: Footer styles */
 
 
+
+
+/* cars.css */
+.snap-x {
+  display: flex;
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory;
+  /* Enable snap behavior */
+}
+
+.scroll-ml-6 {
+  margin-left: 1.5rem;
+  /* Adjust the margin as needed */
+}
+
+.snap-start {
+  scroll-snap-align: start;
+  /* Snap elements to the start of the scroll container */
+}
+
+
