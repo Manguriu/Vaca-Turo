@@ -31,7 +31,7 @@ export default function ModalForm() {
                 Static modal
               </h3>
             </div>
-            <div className="mt-4 overflow-y-auto">
+            <div className="mt-6 overflow-y-auto">
               <p className="text-gray-700">
                 <DateComponent />
               </p>
