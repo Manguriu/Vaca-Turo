@@ -3,7 +3,10 @@ import CarsMakeCard from "./CarsMakeCard";
 
 const CarsByMake = () => {
   return (
-    <div className="mt-10 padding-x padding-y max-width" id="discover">
+    <div
+      className="mt-10 max-lg:mt-20 padding-x padding-y max-width"
+      id="discover"
+    >
       <div className="home__text-container justify-center items-center">
         <h1 className="text-4xl font-extrabold"> Browse cars by make. </h1>
         <p>

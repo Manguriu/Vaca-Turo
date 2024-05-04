@@ -150,7 +150,7 @@ const DateComponent: React.FC<DateProps> = ({ className }: DateProps) => {
           id="car"
           name="car"
           onChange={handleCarChange}
-          className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
         >
           <option value="">Select a car</option>
           {cars.map((car) => (
@@ -176,7 +176,7 @@ const DateComponent: React.FC<DateProps> = ({ className }: DateProps) => {
             value={rentalDays}
             onChange={handleRentalDaysChange}
             min={1}
-            className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+            className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
           />
         </div>
       )}
@@ -197,7 +197,7 @@ const DateComponent: React.FC<DateProps> = ({ className }: DateProps) => {
             onChange={handleDriverAgeChange}
             min={18}
             max={99}
-            className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+            className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
           />
         </div>
       )}
@@ -214,7 +214,7 @@ const DateComponent: React.FC<DateProps> = ({ className }: DateProps) => {
           onChange={(e) =>
             setBookingDetails({ ...bookingDetails, email: e.target.value })
           }
-          className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
         />
       </div>
 
@@ -236,7 +236,7 @@ const DateComponent: React.FC<DateProps> = ({ className }: DateProps) => {
               contactNumber: e.target.value,
             })
           }
-          className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
         />
       </div>
 
@@ -250,43 +250,42 @@ const DateComponent: React.FC<DateProps> = ({ className }: DateProps) => {
           name="location"
           value={bookingDetails.location}
           onChange={handleLocationChange}
-          className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
         />
       </div>
-      <div className="flex gap-4">
-        <div className="grid gap-2">
-          <label
-            htmlFor="pickupTime"
-            className="text-sm font-medium text-gray-700"
-          >
-            Pick-up Time:
-          </label>
-          <input
-            type="time"
-            id="pickupTime"
-            name="pickupTime"
-            value={bookingDetails.pickupTime}
-            onChange={handlePickupTimeChange}
-            className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
-          />
-        </div>
 
-        <div className="grid gap-2">
-          <label
-            htmlFor="returnTime"
-            className="text-sm font-medium text-gray-700"
-          >
-            Return Time:
-          </label>
-          <input
-            type="time"
-            id="returnTime"
-            name="returnTime"
-            value={bookingDetails.returnTime}
-            onChange={handleReturnTimeChange}
-            className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
-          />
-        </div>
+      <div className="grid gap-2">
+        <label
+          htmlFor="pickupTime"
+          className="text-sm font-medium text-gray-700"
+        >
+          Pick-up Time:
+        </label>
+        <input
+          type="time"
+          id="pickupTime"
+          name="pickupTime"
+          value={bookingDetails.pickupTime}
+          onChange={handlePickupTimeChange}
+          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
+        />
+      </div>
+
+      <div className="grid gap-2">
+        <label
+          htmlFor="returnTime"
+          className="text-sm font-medium text-gray-700"
+        >
+          Return Time:
+        </label>
+        <input
+          type="time"
+          id="returnTime"
+          name="returnTime"
+          value={bookingDetails.returnTime}
+          onChange={handleReturnTimeChange}
+          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
+        />
       </div>
 
       {car && (
@@ -309,7 +308,7 @@ const DateComponent: React.FC<DateProps> = ({ className }: DateProps) => {
                 id="date"
                 variant={"outline"}
                 className={cn(
-                  "w-[300px] justify-start text-left font-normal",
+                  "w-full justify-start text-left font-normal",
                   !date && "text-muted-foreground"
                 )}
               >
@@ -342,7 +341,13 @@ const DateComponent: React.FC<DateProps> = ({ className }: DateProps) => {
         </div>
       )}
 
-      {car && <Button onClick={handleSubmit}>Submit</Button>}
+      {car && (
+        <div className="grid gap-2">
+          <Button onClick={handleSubmit} className="w-full">
+            Submit
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import DateComponent from "./DateComponent";
 import Reviews from "./Reviews";
 import Comments from "./Comments";
+import ModalForm from "./modalPop/ModalForm";
 
 const Description = () => {
   return (
@@ -30,13 +31,6 @@ const Description = () => {
             vans pleasing interior, relaxed cabin, space, safety features makes
             it an attractive solution to many of todays traffic and
             environmental problems. Quick acceleration, excellent handling and a
-            high level of braking performance all add up to easy control of the
-            vehicle, assisting in safe motoring. Rent 5 Seater Toyota Voxy /
-            Noah Van for your next travels with voxyvanhire.co.ke and choose
-            from the fleet of high quality 5 seats passenger van. Our luxury
-            Toyota Voxy / Noah Vans comes with extraordinary features and is
-            offered for family tours, corporate travel and group tours. We also
-            offer other safe and reliable imported vans for hire.
           </p>
         </div>
 
@@ -96,7 +90,7 @@ const Description = () => {
           </div>
         </div>
 
-        <h2 className="mt-10 text-2xl font-semibold">Comments</h2>
+        <h2 className="max-lg:hidden mt-10 text-2xl font-semibold">Comments</h2>
         <div className="mt-4">
           <div className="">
             <Comments />
@@ -113,6 +107,7 @@ const Description = () => {
           <div className="mb-4 mt-4">
             <h4 className="text-xl text-cyan-400">Trip start & Trip end </h4>
           </div>
+          <ModalForm />
           <DateComponent />
         </div>
       </div>

@@ -3,7 +3,7 @@ import { Hero } from "@/components/Index";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden bg-white ">
+    <main className="overflow-hidden ">
       <div className="xl:pt-5">
         <Hero />
       </div>
