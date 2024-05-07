@@ -287,14 +287,10 @@ html {
 
 
 
-
-
 .el-wrapper {
   flex: 0 0 auto;
-  /* Allow items to shrink but not grow */
   width: 320px;
   height: 380px;
-  /* Set a fixed width for each card */
   margin-right: 20px;
 }
 
@@ -302,5 +298,5 @@ html {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
-  /* Optional: Add styles for height, width, etc. */
+  
 }
