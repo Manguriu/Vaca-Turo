@@ -238,7 +238,7 @@ export default function Description() {
               </button>
               <button
                 type="button"
-                onClick={handleWhatsApp} // This will submit the form and open WhatsApp
+                onClick={handleWhatsApp} 
                 className="mt-4 w-full bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 items-center justify-center flex gap-2"
               >
                 <span>

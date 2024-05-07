@@ -127,7 +127,7 @@ const DateComponent: React.FC<DateProps> = ({ className }: DateProps) => {
   };
 
   const handleSubmit = () => {
-    // Handle the submit action here, e.g., send data to server
+    // Handle the submit
     setSubmitted(true);
     toast.success("Car rental booked successfully!");
     console.log("Submitted date range:", date);
@@ -139,28 +139,27 @@ const DateComponent: React.FC<DateProps> = ({ className }: DateProps) => {
   };
 
   return (
-    <div className={cn("grid gap-4", className)}>
-      <ToastContainer />
+    <div className={cn("constantWidth", "grid gap-4", className)}>
+    <ToastContainer />
 
-      <div className="grid gap-2">
-        <label htmlFor="car" className="text-sm font-medium text-gray-700">
-          Select Car:
-        </label>
-        <select
-          id="car"
-          name="car"
-          onChange={handleCarChange}
-          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
-        >
-          <option value="">Select a car</option>
-          {cars.map((car) => (
-            <option key={car.id} value={car.id}>
-              {car.name}
-            </option>
-          ))}
-        </select>
-      </div>
-
+    <div className="grid gap-2">
+      <label htmlFor="car" className="text-sm font-medium text-gray-700">
+        Select Car:
+      </label>
+      <select
+        id="car"
+        name="car"
+        onChange={handleCarChange}
+        className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
+      >
+        <option value="">Select a car</option>
+        {cars.map((car) => (
+          <option key={car.id} value={car.id}>
+            {car.name}
+          </option>
+        ))}
+      </select>
+    </div>
       {car && (
         <div className="grid gap-2">
           <label
