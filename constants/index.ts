@@ -89,7 +89,7 @@ export const featuredCarsList = [
     drive: "AWD",
   },
   {
-    id: 4,
+    id: 15,
     make: "Mazda",
     photo: "Cx5.jpg",
     title: "Mazda CX5",
@@ -101,7 +101,7 @@ export const featuredCarsList = [
     drive: "FWD",
   },
   {
-    id: 5,
+    id: 16,
     make: "Subaru",
     photo: "/Outback.png",
     title: "Subaru Outback",
@@ -113,7 +113,7 @@ export const featuredCarsList = [
     drive: "AWD",
   },
   {
-    id: 6,
+    id: 17,
     make: "Lamborghini",
     photo: "/lambo.png",
     title: "Lamborghini Huracan",
@@ -310,3 +310,63 @@ export const CarMakeList = [
     makeImage: "/bmwLogo.png",
   },
 ];
+
+
+export const CarbymakeListDetails = [
+  
+{
+ id : 12,
+ CrbymakeImage: "https://images.turo.com/media/vehicle/images/GVHAxJVFQ1OzX2rEEcSdTw.328x176.jpg",
+ CrmakeName:"Jeep Wrangler 2xe 2021",
+ CarmakeRating:"$5.0",
+ CarmakePrice:"60",
+ carmakeTrips:"67"
+},
+
+
+{
+  id : 12,
+  CrbymakeImage: "https://images.turo.com/media/vehicle/images/Rn3ATfRaRbeRyd3EFmSOFA.328x176.jpg",
+  CrmakeName:"Jeep Wrangler 4xe 2022",
+  CarmakeRating:"$4.2",
+  CarmakePrice:"56",
+  carmakeTrips:"106"
+ },
+
+
+ {
+  id : 12,
+  CrbymakeImage: "https://images.turo.com/media/vehicle/images/xQq4ecSbQCqmzDYtjWjg5w.328x176.jpg",
+  CrmakeName:"Jeep Wrangler 2xe 2023",
+  CarmakeRating:"$4.7",
+  CarmakePrice:"45",
+  carmakeTrips:"105"
+ },
+
+
+
+ {
+  id : 12,
+  CrbymakeImage: "https://images.turo.com/media/vehicle/images/Zz-2iYQhTBqGarmlMtJfjA.328x176.jpg",
+  CrmakeName:"Jeep Wrangler 4xe 2024",
+  CarmakeRating:"$4.99",
+  CarmakePrice:"70",
+  carmakeTrips:"107"
+ },
+
+
+ {
+  id : 12,
+  CrbymakeImage: "https://images.turo.com/media/vehicle/images/ROEL1qgeQay26enQ3mGg-w.328x176.jpg",
+  CrmakeName:"Jeep Wrangler 2xe 2025",
+  CarmakeRating:"$5.0",
+  CarmakePrice:"51",
+  carmakeTrips:"10"
+ },
+
+
+
+
+
+
+]

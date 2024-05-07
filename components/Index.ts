@@ -4,8 +4,8 @@ import Navbar from "./homePage/Navbar";
 import Footer from "./homePage/Footer";
 import CustomFilter from "./CustomFilter";
 import SearchBar from "./SearchBar";
-import FeaturedCars from "./Cars/FeaturedCars";
-import CarsByMake from "./Cars/CarsByMake";
+import FeaturedCars from "./Featurecards/FeaturedCars";
+import CarsByMake from "./Cars/CarbyMake/CarsByMake";
 import Host from "./Host/Host";
 
 
