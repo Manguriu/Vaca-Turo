@@ -33,7 +33,7 @@ export default function CarDetails() {
   };
 
   return (
-    <main className="max-w-screen-xl mx-auto">
+    <main className="max-w-screen-xl mx-auto bg-slate-500">
       <div className="sm:px-16 px-6 mx-auto flex flex-col gap-4">
         <div className="flex gap-2 justify-center">
           <div className="w-[75%] max-lg:w-full relative">
