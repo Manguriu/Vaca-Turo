@@ -2,7 +2,6 @@ import React from "react";
 import DateComponent from "./DateComponent";
 import Reviews from "./Reviews";
 import Comments from "./Comments";
-import ModalForm from "./modalPop/ModalForm";
 
 const Description = () => {
   return (
