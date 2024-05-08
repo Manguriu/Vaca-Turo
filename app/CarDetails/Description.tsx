@@ -2,7 +2,6 @@ import React from "react";
 import DateComponent from "./DateComponent";
 import Reviews from "./Reviews";
 import Comments from "./Comments";
-import ModalForm from "./modalPop/ModalForm";
 
 const Description = () => {
   return (
@@ -86,9 +85,12 @@ const Description = () => {
           <div>
             <p>Tesla</p>
           </div>
-          <div className="lg:hidden mb-5 mt-5">
+          <div className="lg:hidden w-[300px]">
+              <DateComponent />
+            </div>
+          {/* <div className="lg:hidden mb-5 mt-5">
             <ModalForm />
-          </div>
+          </div> */}
           <h2 className="mt-10 text-2xl font-semibold">
             Reviews
           </h2>
