@@ -33,13 +33,13 @@ export default function CarDetails() {
   };
 
   return (
-    <main className="max-w-screen-xl mx-auto bg-slate-500">
-      <div className="sm:px-16 px-6 mx-auto flex flex-col gap-4">
+    <main className="max-w-screen-xl mx-auto">
+      <div className="sm:px-16 lg:px-6 mx-auto flex flex-col gap-4">
         <div className="flex gap-2 justify-center">
           <div className="w-[75%] max-lg:w-full relative">
             <div className="relative">
               <img
-                className="h-[427px] w-full rounded-s-xl max-lg:rounded-xl max-lg:object-fit max-lg:h-auto cursor-pointer"
+                className="h-[427px] w-full lg:rounded-s-xl lg:rounded-xl max-lg:object-fit max-lg:h-auto cursor-pointer"
                 alt=""
                 src={carImageURL}
                 onClick={() => openModal(carImageURL)}
@@ -66,15 +66,10 @@ export default function CarDetails() {
                 src={carImageURL2}
                 onClick={() => openModal(carImageURL2)}
               />
-              {/* <div className="max-lg:left-0 absolute bottom-0 right-0 focus:ring-1 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center">
-                <ModalC />
-              </div> */}
-
-              <div></div>
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="w-[100%]">
           <Description />
         </div>
       </div>

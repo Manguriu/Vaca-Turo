@@ -15,17 +15,17 @@ const HostCard = () => {
               <img src={details.HouseDetailsListimage} alt="house" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">
+              <h2 className="card-title font-Briem">
                 {details.HouseName}
                 <div className="badge badge-secondary">New</div>
               </h2>
-              <p className="max-lg:hidden">{details.Shortdescription}</p>
+              <p className="max-lg:hidden lg:font-Josefin lg:text-[18px]">{details.Shortdescription}</p>
               <div className="card-actions justify-end mt-2">
                 <button
                   onClick={() => router.push(`/HouseDetails/${details.id}`)}
                   data-twe-ripple-init
                   data-twe-ripple-color="light"
-                  className="max-lg:w-full max-lg:justify-center mb-2 flex rounded bg-[#1da1f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                  className=" font-Josefin max-md:text-[14px] max-lg:w-full max-lg:justify-center mb-2 flex rounded bg-[#1da1f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
                 >
                   View
                 </button>
@@ -39,3 +39,4 @@ const HostCard = () => {
 };
 
 export default HostCard;
+
