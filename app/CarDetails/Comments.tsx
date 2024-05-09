@@ -1,11 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import { useState } from "react";
 
 const handleClickHelpful = () => {
   console.log("Helpful button clicked");
   //logic to handle the Helpful
-  
 };
 
 const handleClickReportAbuse = () => {
@@ -26,6 +25,12 @@ const StarIcon = () => (
 );
 
 const Comments = () => {
+  const [showFullText, setShowFullText] = useState(false);
+
+  const toggleView = () => {
+    setShowFullText(!showFullText);
+  };
+
   return (
     <div className="bg-white dark:bg-gray-900 shadow-lg p-6 rounded-md">
       <article>
@@ -61,12 +66,26 @@ const Comments = () => {
             <time dateTime="2017-03-03 19:00">March 3, 2017</time>
           </p>
         </footer>
+        <div>
         <p className="mb-2 text-gray-600 dark:text-gray-300">
-          This is my third Invicta Pro Diver. They are just fantastic value for
-          money. This one arrived yesterday and the first thing I did was set
-          the time, popped on an identical strap from another Invicta and went
-          in the shower with it to test the waterproofing.... No problems.
+          {showFullText ? (
+            <>
+              {" "}
+              This is my third Invicta Pro Diver. They are just fantastic value
+              for money. This one arrived yesterday and the first thing I did
+              was set the time, popped on an identical strap from another
+              Invicta and went in the shower with it to test the
+              waterproofing.... No problems.
+            </>
+          ) : (
+            <>This is my third Invicta Pro Diver. They are just fantastic</>
+          )}
         </p>
+        <button className="p-1 italic mb-2 text-[18px]" onClick={toggleView}>
+          {showFullText ? 'Less..' : 'More..'}
+        </button>
+        </div>
+        
 
         <aside className="flex items-center justify-between">
           <motion.button

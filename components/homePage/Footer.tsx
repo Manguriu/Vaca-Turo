@@ -15,20 +15,20 @@ const Footer = () => {
             height={100}
             className="object-contain"
           />
-          <p className="text-base text-gray-700 max-md:flex max-md:flex-col items-center flex flex-col">
-            <span className="max-md:text-[20px]">KingVac Car Rentals 2024 </span>
-            <span className="max-md:text-[20px]">All rights reserved &copy;</span>
+          <p className="text-base text-gray-700 max-md:flex max-md:flex-col items-center flex flex-col ">
+            <span className="max-md:text-[20px] ">KingVac Car Rentals 2024 </span>
+            <span className="max-md:text-[20px] ">All rights reserved &copy;</span>
           </p>
         </div>
         <div className="footer__links ">
           {footerLinks.map((link) => (
-            <div key={link.title} className="footer__link">
-              <h3 className="font-bold max-md:text-[20px]">{link.title}</h3>
+            <div key={link.title} className="footer__link ">
+              <h3 className="font-bold max-md:text-[20px] font-Josefin">{link.title}</h3>
               {link.links.map((item) => (
                 <Link
                   key={item.title}
                   href={item.url}
-                  className="text-gray-500 max-md:text-[18px]"
+                  className="text-gray-500 max-md:text-[18px] font-Josefin"
                 >
                   {item.title}
                 </Link>
@@ -39,10 +39,10 @@ const Footer = () => {
       </div>
       <div className="flex justify-between items-center md:flex  mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
         <div className="flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10 ">
-          <Link href="/" className="text-gray-500 max-md:text-[20px]">
+          <Link href="/" className="text-gray-500 max-md:text-[20px] font-Josefin">
             Private policy
           </Link>
-          <Link href="/" className="text-gray-500 max-md:text-[20px]">
+          <Link href="/" className="text-gray-500 max-md:text-[20px] font-Josefin">
             Terms of use
           </Link>
         </div>

@@ -23,7 +23,7 @@ const CarsMakeCard = () => {
               />
             </figure>
             <div className="card-body">
-              <h2 className="font-bold text-xl">{details.make}</h2>
+              <h2 className="font-bold text-xl font-Briem">{details.make}</h2>
             </div>
           </button>
         </div>

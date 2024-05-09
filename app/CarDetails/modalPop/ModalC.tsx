@@ -13,13 +13,14 @@ export default function ModalC() {
         </button>
       </a>
 
-      <div className="modal" role="dialog" id="my_modal_8">
+      <div className="modal max-md:px-2 p-8" role="dialog" id="my_modal_8">
         <div className="h-[90%] w-[80%] max-lg:h-auto max-lg:w-auto bg-white overflow-y-auto px-2 py-2 rounded-2xl">
           <div className=" w-full rounded-xl bg-white ">
-            <h3 className="font-bold text-lg py-4">Tesla Model 3 2021</h3>
+            <h3 className="font-bold text-lg py-4 max-md:py-1 font-Briem">Tesla Model 3 2021</h3>
+            <hr className="border-t-2 border-gray-200 my-2" />
           </div>
-          <div className="max-h-[calc(90%-3rem)] overflow-y-auto">
-            <div className="grid grid-cols-2 gap-2">
+          <div className="max-h-[calc(90%-3rem)] overflow-y-auto pb-2">
+            <div className="grid max-md:grid-cols-2 gap-2">
               <div>
                 <img
                   className="h-auto max-w-full rounded-lg"
@@ -71,8 +72,9 @@ export default function ModalC() {
               </div>
             </div>
           </div>
-          <div className="modal-action">
-            <a href="#" className="btn">
+          <hr className="border-t-2 border-gray-200 my-2" />
+          <div className="modal-action max-md:px-4 max-md:pb-4">
+            <a href="#" className="btn font-Briem max-md:text-[18px]">
               Close
             </a>
           </div>
