@@ -1,354 +1,299 @@
 import React, { useState } from "react";
-import { addDays, format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
-import { DateRange } from "react-day-picker";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+interface Errors {
+  pickUpDate?: string;
+  ReturnDate?: string;
+  pickUpTime?: string;
+  ReturnTime?: string;
+  phoneNumber?: string;
+  location?: string;
+}
 
-type DateProps = React.HTMLAttributes<HTMLDivElement>;
-
-interface Car {
-  id: string;
+interface Location {
+  id: number;
   name: string;
-  pricePerDay: number;
+  price?: string;
+  address?: string;
 }
 
-interface CarFeatures {
-  driverAge: number;
-  extras: string[];
-}
+export default function DateComponent() {
+  const [pickUpDate, setPickUpDate] = useState("");
+  const [ReturnDate, setReturnDate] = useState("");
+  const [pickUpTime, setPickUpTime] = useState("");
+  const [ReturnTime, setReturnTime] = useState("");
+  const [errors, setErrors] = useState<Errors>({});
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedLocationId, setSelectedLocationId] = useState<number | null>(
+    null
+  );
+  const [phoneNumber, setPhoneNumber] = useState("");
 
-interface BookingDetails {
-  location: string;
-  pickupTime: string;
-  returnTime: string;
-  email: string;
-  contactNumber: string;
-}
-
-const DateComponent: React.FC<DateProps> = ({ className }: DateProps) => {
-  const [date, setDate] = React.useState<DateRange | undefined>({
-    from: new Date(2022, 0, 20),
-    to: addDays(new Date(2022, 0, 20), 20),
-  });
-  const [car, setCar] = useState<Car | null>(null);
-  const [rentalDays, setRentalDays] = useState<number>(1);
-  const [submitted, setSubmitted] = useState(false);
-  const [carFeatures, setCarFeatures] = useState<CarFeatures>({
-    driverAge: 25,
-    extras: [],
-  });
-  const [bookingDetails, setBookingDetails] = useState<BookingDetails>({
-    location: "",
-    pickupTime: "",
-    returnTime: "",
-    email: "",
-    contactNumber: "",
-  });
-
-  const cars: Car[] = [
-    { id: "1", name: "Toyota Noah", pricePerDay: 30 },
-    { id: "2", name: "Subaru Legacy", pricePerDay: 70 },
-    { id: "3", name: "Prado TX", pricePerDay: 60 },
-    { id: "4", name: "Mazda CX5", pricePerDay: 50 },
-    { id: "5", name: "Subaru Outback", pricePerDay: 80 },
-    { id: "6", name: "Lamborghini Huracan", pricePerDay: 500 },
+  const locations: Location[] = [
+    { id: 1, name: "Woodford Green, GB IG89QY", price: "Free" },
+    { id: 2, name: "London Southend Airport", price: "£120" },
+    { id: 3, name: "London City Airport", price: "£120" },
+    { id: 4, name: "Gatwick Airport", price: "£120" },
+    {
+      id: 5,
+      name: "Oxfor Circus Underground Station",
+      address: "Oxford Street, London, England W1B 3AG",
+      price: "£80",
+    },
+    {
+      id: 6,
+      name: "Kings Cross",
+      address: "Euston Road, London, England N1 9AL",
+      price: "£80",
+    },
   ];
 
-  const calculateTotalPrice = (): number => {
-    if (!car) return 0;
-    const extrasPrice = carFeatures.extras.length * 10; // Assuming each extra costs $10 per day
-    return car.pricePerDay * rentalDays + extrasPrice;
+  const handleLocationSelect = (location: Location) => {
+    setSelectedLocationId(location.id);
+    setIsOpen(false);
+    setErrors((prevState) => ({ ...prevState, location: "" })); // Clear location error if selected
+    console.log("Selected Location:", location);
+  };
+  
+
+  const getSelectedLocationName = () => {
+    const selectedLocation = locations.find(
+      (location) => location.id === selectedLocationId
+    );
+    return selectedLocation ? selectedLocation.name : "";
   };
 
-  const handleCarChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedCarId = e.target.value;
-    const selectedCar = cars.find((car) => car.id === selectedCarId);
-    if (selectedCar) {
-      setCar(selectedCar);
-    }
+  const handlePickUpDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPickUpDate(e.target.value);
+    setErrors((prevState) => ({ ...prevState, pickUpDate: "" }));
   };
 
-  const handleRentalDaysChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const days = parseInt(e.target.value) || 1;
-    setRentalDays(days);
+  const handleReturnDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setReturnDate(e.target.value);
+    setErrors((prevState) => ({ ...prevState, ReturnDate: "" }));
   };
 
-  const handleDriverAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCarFeatures({
-      ...carFeatures,
-      driverAge: parseInt(e.target.value) || 0,
-    });
-  };
-
-  const handleExtrasChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, checked } = e.target;
-    if (checked) {
-      setCarFeatures({
-        ...carFeatures,
-        extras: [...carFeatures.extras, value],
-      });
-    } else {
-      setCarFeatures({
-        ...carFeatures,
-        extras: carFeatures.extras.filter((extra) => extra !== value),
-      });
-    }
-  };
-
-  const handleLocationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setBookingDetails({
-      ...bookingDetails,
-      location: e.target.value,
-    });
-  };
-
-  const handlePickupTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setBookingDetails({
-      ...bookingDetails,
-      pickupTime: e.target.value,
-    });
+  const handlePickUpTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPickUpTime(e.target.value);
+    setErrors((prevState) => ({ ...prevState, pickUpTime: "" }));
   };
 
   const handleReturnTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setBookingDetails({
-      ...bookingDetails,
-      returnTime: e.target.value,
-    });
+    setReturnTime(e.target.value);
+    setErrors((prevState) => ({ ...prevState, ReturnTime: "" }));
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhoneNumber(e.target.value);
+    setErrors((prevState) => ({ ...prevState, phoneNumber: "" }));
   };
 
   const handleSubmit = () => {
-    // Handle the submit
-    setSubmitted(true);
-    toast.success("Car rental booked successfully!");
-    console.log("Submitted date range:", date);
-    console.log("Selected car:", car);
-    console.log("Rental days:", rentalDays);
-    console.log("Car features:", carFeatures);
-    console.log("Booking Details:", bookingDetails);
-    console.log("Total Price:", calculateTotalPrice());
+    let formErrors = {};
+
+    // Date format validation (YYYY-MM-DD)
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!pickUpDate.match(dateRegex)) {
+      formErrors = { ...formErrors, pickUpDate: "Invalid date format" };
+    }
+    if (!ReturnDate.match(dateRegex)) {
+      formErrors = { ...formErrors, ReturnDate: "Invalid date format" };
+    }
+
+    // Time format validation (HH:MM)
+    const timeRegex = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+    if (!pickUpTime.match(timeRegex)) {
+      formErrors = { ...formErrors, pickUpTime: "Invalid time format" };
+    }
+    if (!ReturnTime.match(timeRegex)) {
+      formErrors = { ...formErrors, ReturnTime: "Invalid time format" };
+    }
+    // Location selection validation
+    if (!selectedLocationId) {
+      formErrors = { ...formErrors, location: "Location is required" };
+    }
+
+    // Phone number format validation
+    const phoneRegex = /^\d{10}$/; //  10 digits for a phone number
+    if (!phoneNumber.match(phoneRegex)) {
+      formErrors = { ...formErrors, phoneNumber: "Invalid phone number" };
+    }
+
+    // Set errors if any
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+      return;
+    }
+
+    console.log("Submitted Data:");
+    console.log("Check-in Date:", pickUpDate);
+    console.log("Check-out Date:", ReturnDate);
+    console.log("Check-in Time:", pickUpTime);
+    console.log("Check-out Time:", ReturnTime);
+    console.log("Selected Location:", getSelectedLocationName());
+    console.log("Phone Number:", phoneNumber);
   };
 
   return (
-    <div className={cn("constantWidth", "grid gap-4", className)}>
-    <ToastContainer />
-
-    <div className="grid gap-2">
-      <label htmlFor="car" className="text-sm font-medium text-gray-700">
-        Select Car:
-      </label>
-      <select
-        id="car"
-        name="car"
-        onChange={handleCarChange}
-        className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
-      >
-        <option value="">Select a car</option>
-        {cars.map((car) => (
-          <option key={car.id} value={car.id}>
-            {car.name}
-          </option>
-        ))}
-      </select>
-    </div>
-      {car && (
-        <div className="grid gap-2">
-          <label
-            htmlFor="rentalDays"
-            className="text-sm font-medium text-gray-700"
-          >
-            Rental Days:
-          </label>
-          <input
-            type="number"
-            id="rentalDays"
-            name="rentalDays"
-            value={rentalDays}
-            onChange={handleRentalDaysChange}
-            min={1}
-            className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
-          />
+    <div className="py-6 w-full h-full bg-white shadow-sm rounded px-1 pt-6 pb-8 mb-4">
+      <div className="w-full gap-2">
+        <div className="flex gap-2">
+          <div className="mb-4 w-[60%]">
+            <label
+              htmlFor="checkInDate"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Pick-Up Date
+            </label>
+            <input
+              type="date"
+              id="checkInDate"
+              name="checkInDate"
+              value={pickUpDate}
+              onChange={handlePickUpDateChange}
+              className="h-[36px] mt-1 px-3 py-2 w-full border focus:outline-none focus:ring-2 focus:ring-slate-800"
+            />
+            {errors.pickUpDate && (
+              <span className="text-red-500">{errors.pickUpDate}</span>
+            )}
+          </div>
+          <div className="mb-4 w-[40%]">
+            <label
+              htmlFor="checkInTime"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Pick-up Time
+            </label>
+            <input
+              type="time"
+              id="checkInTime"
+              name="checkInTime"
+              value={pickUpTime}
+              onChange={handlePickUpTimeChange}
+              className="h-[36px] mt-1 px-3 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800"
+            />
+            {errors.pickUpTime && (
+              <span className="text-red-500">{errors.pickUpTime}</span>
+            )}
+          </div>
         </div>
-      )}
+        <div className="flex gap-2">
+          <div className="mb-4 w-[60%]">
+            <label
+              htmlFor="checkOutDate"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Return-Date
+            </label>
+            <input
+              type="date"
+              id="checkOutDate"
+              name="checkOutDate"
+              value={ReturnDate}
+              onChange={handleReturnDateChange}
+              className="h-[36px] mt-1 px-3 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800"
+            />
+            {errors.ReturnDate && (
+              <span className="text-red-500">{errors.ReturnDate}</span>
+            )}
+          </div>
 
-      {car && (
-        <div className="grid gap-2">
-          <label
-            htmlFor="driverAge"
-            className="text-sm font-medium text-gray-700"
-          >
-            Driver Age:
-          </label>
-          <input
-            type="number"
-            id="driverAge"
-            name="driverAge"
-            value={carFeatures.driverAge.toString()}
-            onChange={handleDriverAgeChange}
-            min={18}
-            max={99}
-            className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
-          />
+          <div className="mb-4 w-[40%]">
+            <label
+              htmlFor="checkOutTime"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Return-Time
+            </label>
+            <input
+              type="time"
+              id="checkOutTime"
+              name="checkOutTime"
+              value={ReturnTime}
+              onChange={handleReturnTimeChange}
+              className="h-[36px] mt-1 px-3 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800"
+            />
+            {errors.ReturnTime && (
+              <span className="text-red-500">{errors.ReturnTime}</span>
+            )}
+          </div>
         </div>
-      )}
 
-      <div className="grid gap-2">
-        <label htmlFor="email" className="text-sm font-medium text-gray-700">
-          Email:
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={bookingDetails.email}
-          onChange={(e) =>
-            setBookingDetails({ ...bookingDetails, email: e.target.value })
-          }
-          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
-        />
-      </div>
-
-      <div className="grid gap-2">
-        <label
-          htmlFor="contactNumber"
-          className="text-sm font-medium text-gray-700"
-        >
-          Contact Number:
-        </label>
-        <input
-          type="tel"
-          id="contactNumber"
-          name="contactNumber"
-          value={bookingDetails.contactNumber}
-          onChange={(e) =>
-            setBookingDetails({
-              ...bookingDetails,
-              contactNumber: e.target.value,
-            })
-          }
-          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
-        />
-      </div>
-
-      <div className="grid gap-2">
-        <label htmlFor="location" className="text-sm font-medium text-gray-700">
-          Location:
-        </label>
-        <input
-          type="text"
-          id="location"
-          name="location"
-          value={bookingDetails.location}
-          onChange={handleLocationChange}
-          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
-        />
-      </div>
-
-      <div className="grid gap-2">
-        <label
-          htmlFor="pickupTime"
-          className="text-sm font-medium text-gray-700"
-        >
-          Pick-up Time:
-        </label>
-        <input
-          type="time"
-          id="pickupTime"
-          name="pickupTime"
-          value={bookingDetails.pickupTime}
-          onChange={handlePickupTimeChange}
-          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
-        />
-      </div>
-
-      <div className="grid gap-2">
-        <label
-          htmlFor="returnTime"
-          className="text-sm font-medium text-gray-700"
-        >
-          Return Time:
-        </label>
-        <input
-          type="time"
-          id="returnTime"
-          name="returnTime"
-          value={bookingDetails.returnTime}
-          onChange={handleReturnTimeChange}
-          className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:border-blue-300"
-        />
-      </div>
-
-      {car && (
-        <div className="grid gap-2">
-          <label className="text-sm font-medium text-gray-700">
-            Total Price:
-          </label>
-          <div>${calculateTotalPrice()}</div>
-        </div>
-      )}
-
-      {car && (
-        <div className="grid gap-2">
-          <label className="text-sm font-medium text-gray-700">
-            Select Dates:
-          </label>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button
-                id="date"
-                variant={"outline"}
-                className={cn(
-                  "w-full justify-start text-left font-normal",
-                  !date && "text-muted-foreground"
-                )}
+        <div className=" py-2 mb-3">
+          <div className="location-picker-container">
+            <label
+              htmlFor="location-picker"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Pickup & return location
+            </label>
+            <div className="relative">
+              <button
+                id="location-picker"
+                aria-controls="locations"
+                aria-expanded={isOpen}
+                onClick={() => setIsOpen(!isOpen)}
+                className="location-picker-btn border border-gray-300 bg-white rounded-md shadow-sm py-2 px-4 w-full flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               >
-                <CalendarIcon className="mr-2 h-4 w-4" />
-                {date?.from ? (
-                  date.to ? (
-                    <>
-                      {format(date.from, "LLL dd, y")} -{" "}
-                      {format(date.to, "LLL dd, y")}
-                    </>
-                  ) : (
-                    format(date.from, "LLL dd, y")
-                  )
-                ) : (
-                  <span>Pick a date</span>
-                )}
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
-              <Calendar
-                initialFocus
-                mode="range"
-                defaultMonth={date?.from}
-                selected={date}
-                onSelect={setDate}
-                numberOfMonths={2}
-              />
-            </PopoverContent>
-          </Popover>
-        </div>
-      )}
+                {selectedLocationId
+                  ? getSelectedLocationName()
+                  : "Select Location"}
+              </button>
 
-      {car && (
-        <div className="grid gap-2">
-          <Button onClick={handleSubmit} className="w-full">
-            Submit
-          </Button>
+              {isOpen && (
+                <div
+                  id="locations"
+                  className="absolute mt-1 w-full z-10 bg-white border border-gray-300 shadow-lg rounded-md"
+                >
+                  {locations.map((location) => (
+                    <button
+                      key={location.id}
+                      type="button"
+                      onClick={() => handleLocationSelect(location)}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+                    >
+                      <p>{location.name}</p>
+                      {location.price && (
+                        <p className="text-gray-500 text-xs">
+                          {location.price}
+                        </p>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            {errors.location && (
+              <span className="text-red-500">{errors.location}</span>
+            )}
+          </div>
         </div>
-      )}
+
+        <div className="mb-2">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Enter Phone Number
+          </label>
+          <input
+            type="phone"
+            id="Phone"
+            name="phoneNumber"
+            value={phoneNumber}
+            onChange={handlePhoneChange}
+            className="h-[36px] mt-1 px-3 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800"
+          />
+          {errors.phoneNumber && (
+            <span className="text-red-500">{errors.phoneNumber}</span>
+          )}
+        </div>
+
+        <div className="mb-4 mt-5 w-full">
+          <button
+            onClick={handleSubmit}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline max-md:w-full"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default DateComponent;
+}
