@@ -21,13 +21,13 @@ const Hero = () => {
         <h1 className="2xl:text-[60px] sm:text-[64px] text-[50px] font-extrabold max-md:text-[40px] font-Poetsen">
           Find your drive Car rentals from trusted, local hosts
         </h1>
-        <p className="text-[27px] font-light mt-5 max-md:text-[20px] leading-6 font-Josefin">
+        <p className="text-[20px] font-light mt-5 max-md:text-[18px] leading-6 font-Josefin">
           Get the best experience in the car rental business with us King vaca
           Car rentals
         </p>
 
         <button
-          className="font-Poetsen text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-5 max-md:mt-7"
+          className="font-Poetsen text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-10 max-md:mt-7"
           onClick={() => scrollToSection("cars")}
         >
           Explore Cars
