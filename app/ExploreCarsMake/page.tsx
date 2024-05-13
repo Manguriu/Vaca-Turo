@@ -11,7 +11,7 @@ export default function ExploreCarsMake() {
         <h1 className="text-4xl mt-4 font-bold">Rent a Jeep</h1>
       </div>
       <div className="flex gap-6 justify-center items-center mt-8">
-        <div className="flex justify-center items-center px-4">
+        <div className="flex justify-center items-center lg:px-4">
           <div className="flex justify-center gap-3 flex-wrap pt-4" >
             {CarbymakeListDetails.map((details) => (
               <Link href="/CarDetails/id" key={details.id}>

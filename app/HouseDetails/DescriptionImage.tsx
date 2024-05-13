@@ -58,10 +58,10 @@ export default function Description() {
       )}
 
       <main className="mx-auto w-full flex flex-col justify-center items-center">
-        <div className="sm:px-16 px-6 mx-auto flex flex-row gap-4 w-full max-lg:flex-col">
-          <div className="flex flex-col gap-2 max-lg:w-auto">
+        <div className="sm:px-16 lg:px-6 mx-auto flex flex-row gap-4 w-full max-lg:flex-col">
+          <div className="flex flex-col gap-2 max-lg:w-full">
             <img
-              className="h-[500px] w-full rounded-xl max-lg:h-auto"
+              className="h-[500px] w-full rounded-xl max-md:rounded-none  max-lg:h-auto"
               alt=""
               src={mainImage}
               onClick={() => handleImageClick(mainImage)}

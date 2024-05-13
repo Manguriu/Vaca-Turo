@@ -1,18 +1,19 @@
 "use client";
 
+
 import React, { useState } from "react";
 
+import { usePathname } from 'next/navigation';
+
 const Navbar = () => {
+  const pathname = usePathname();
   const [showMenu, setShowMenu] = useState(false);
 
   const handleClick = () => {
     setShowMenu((prevShowMenu) => !prevShowMenu);
   };
 
-  const handleMenuClick = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    id: string
-  ) => {
+  const handleMenuClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
@@ -20,9 +21,12 @@ const Navbar = () => {
     }
   };
 
+  // Check if homepage
+  const isHomepage = pathname === "/";
+
   return (
-    <nav className="border-gray-200  dark:bg-gray-800 dark:border-gray-700 sm:px-10">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
+    <nav className="border-gray-200 dark:bg-gray-800 dark:border-gray-700 sm:px-10">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="/logo.png" className="lg:h-10 max-lg:h-8" alt="king logo" />
         </a>
@@ -55,42 +59,48 @@ const Navbar = () => {
           id="navbar-solid-bg"
         >
           <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
-            <li>
-              <a
-                href="/"
-                className="lg:text-[18px] font-Josefin block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
-                aria-current="page"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#FeaturedCars"
-                onClick={(e) => handleMenuClick(e, "FeaturedCars")}
-                className=" lg:text-[18px] font-Josefin block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Featured Cars
-              </a>
-            </li>
-            <li>
-              <a
-                href="#cars"
-                onClick={(e) => handleMenuClick(e, "cars")}
-                className="font-Josefin lg:text-[18px] block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Cars by make
-              </a>
-            </li>
-            <li>
-              <a
-                href="/FeaturedHomes"
-                onClick={(e) => handleMenuClick(e, "FeaturedHomes")}
-                className="lg:text-[18px] font-Josefin block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Featured Homes
-              </a>
-            </li>
+            {!isHomepage && (
+              <li>
+                <a
+                  href="/"
+                  className="lg:text-[18px] font-Josefin block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+                  aria-current="page"
+                >
+                  Home
+                </a>
+              </li>
+            )}
+            {isHomepage && (
+              <>
+                <li>
+                  <a
+                    href="#FeaturedCars"
+                    onClick={(e) => handleMenuClick(e, "FeaturedCars")}
+                    className="lg:text-[18px] font-Josefin block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >
+                    Featured Cars
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#cars"
+                    onClick={(e) => handleMenuClick(e, "cars")}
+                    className="font-Josefin lg:text-[18px] block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >
+                    Cars by make
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/FeaturedHomes"
+                    onClick={(e) => handleMenuClick(e, "FeaturedHomes")}
+                    className="lg:text-[18px] font-Josefin block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >
+                    Featured Homes
+                  </a>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

@@ -7,7 +7,7 @@ const CarCard = () => {
   const router = useRouter();
 
   return (
-    <div className="container page-wrapper mt-5">
+    <div className="container max-md:px-0 page-wrapper mt-5">
       {featuredCarsList.map((details) => (
         <div key={details.id} className="el-wrapper">
           <div className="box-up">

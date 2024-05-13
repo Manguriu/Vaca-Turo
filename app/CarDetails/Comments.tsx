@@ -48,7 +48,7 @@ const Comments = () => {
               dateTime="2014-08-16 19:00"
               className="block text-xs text-gray-500 dark:text-gray-400"
             >
-              Joined on August 2014
+              Joined on August 2024
             </time>
           </div>
         </div>
@@ -57,13 +57,13 @@ const Comments = () => {
             <StarIcon key={index} />
           ))}
           <h3 className="ms-2 text-sm font-semibold text-gray-900 dark:text-white">
-            Thinking to buy another one!
+            Thinking Of renting it again!
           </h3>
         </div>
         <footer className="mb-3 text-xs text-gray-500 dark:text-gray-400">
           <p>
             Reviewed in the United Kingdom on{" "}
-            <time dateTime="2017-03-03 19:00">March 3, 2017</time>
+            <time dateTime="2024-03-03 19:00">March 3, 2024</time>
           </p>
         </footer>
         <div>

@@ -24,7 +24,7 @@ const Reviews = () => {
   ];
 
   return (
-    <div className="bg-white  p-6 rounded-md">
+    <div className="bg-white dark:bg-gray-900 shadow-lg p-6 rounded-md ">
       {/* Overall Rating */}
       <div className="flex items-center mb-4">
         {[...Array(5)].map((_, index) => (
@@ -54,10 +54,10 @@ const Reviews = () => {
             {item.stars} star
           </a>
           {/* Rating Bar */}
-          <div className="flex items-center justify-between w-1/2 ml-4">
-            <div className="w-3/4 h-4 bg-gray-200 dark:bg-gray-700 rounded-md overflow-hidden">
+          <div className="flex items-center justify-between w-1/2 max-md:w-3/4 ml-4">
+            <div className="w-3/4 h-1 bg-gray-200 dark:bg-gray-700 rounded-md overflow-hidden">
               <motion.div
-                className="h-full bg-yellow-300"
+                className="h-[7px] bg-yellow-300"
                 style={{ width: `${item.percentage}%` }}
               ></motion.div>
             </div>

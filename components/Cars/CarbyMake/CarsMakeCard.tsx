@@ -7,9 +7,9 @@ const CarsMakeCard = () => {
   const router = useRouter();
 
   return (
-    <div className="snap-x overflow-x-auto px-4 py-4">
+    <div className="snap-x overflow-x-auto px-4 py-4 gap-4">
       {CarMakeList.map((details) => (
-        <div key={details.id} className="scroll-ml-6 snap-start flex-shrink-0 ">
+        <div key={details.id} className="scroll-ml-1 snap-start flex-shrink-0 ">
           <button
             onClick={() => router.push("/ExploreCarsMake")}
             type="button"
