@@ -3,6 +3,7 @@ import DateComponent from "./DateComponent";
 import Reviews from "./Reviews";
 import Comments from "./Comments";
 import { useState } from "react";
+import LocationMap from "./MapDetails/LocationMap";
 
 const Description = () => {
   const [showFullText, setShowFullText] = useState(false);
@@ -124,7 +125,7 @@ const Description = () => {
 
         <h2 className="mt-10 text-2xl font-semibold font-Briem">Location</h2>
         <div>
-          <p>Tesla</p>
+          <p><LocationMap /> </p>
         </div>
         
 

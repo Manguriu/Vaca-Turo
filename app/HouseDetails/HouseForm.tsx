@@ -101,9 +101,9 @@ export default function HouseForm() {
               className="object-contain"
             />
           </Link>
-          <h2 className="mt-5 items-center flex">
+          <h2 className="mt-5 items-center flex font-Josefin ">
             {" "}
-            <span className="text-xl font-bold">23 </span>$/day
+            <span className="text-xl font-bold font-Josefin ">23 </span>$/day
           </h2>
         </div>
 
@@ -116,7 +116,7 @@ export default function HouseForm() {
               placeholder="Name"
               value={formData.name}
               onChange={handleChange}
-              className={`rounded-2xl mt-1 px-3 py-2 w-full border focus:outline-none focus:ring-1 focus:ring-slate-800 ${
+              className={`rounded-2xl mt-1 px-3 py-2 w-full border focus:outline-none focus:ring-1 focus:ring-slate-800 font-Josefin ${
                 errors.name ? "border-red-500" : ""
               }`}
             />
@@ -130,7 +130,7 @@ export default function HouseForm() {
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              className={`rounded-2xl mt-1 px-3 py-2 w-full border focus:outline-none focus:ring-2 focus:ring-slate-800 ${
+              className={`rounded-2xl mt-1 px-3 py-2 w-full border focus:outline-none focus:ring-2 focus:ring-slate-800 font-Josefin  ${
                 errors.email ? "border-red-500" : ""
               }`}
             />
@@ -146,7 +146,7 @@ export default function HouseForm() {
               placeholder="Phone"
               value={formData.phone}
               onChange={handleChange}
-              className={`rounded-2xl mt-1 px-3 py-2 w-full border focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              className={`rounded-2xl mt-1 px-3 py-2 w-full border focus:outline-none focus:ring-2 focus:ring-blue-500 font-Josefin   ${
                 errors.phone ? 'border-red-500' : ''
               }`}
             />
@@ -157,7 +157,7 @@ export default function HouseForm() {
             <div className="mb-4 w-full">
               <label
                 htmlFor="checkInDate"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 font-Josefin text-[15px]"
               >
                 Check-in Date
               </label>
@@ -167,7 +167,7 @@ export default function HouseForm() {
                 name="checkInDate"
                 value={formData.checkInDate}
                 onChange={handleChange}
-                className={`h-[70px] mt-1 px-3 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800 ${
+                className={`h-[70px] mt-1 px-3 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800 font-Josefin ${
                     errors.checkInDate ? 'border-red-500' : ''
                   }`}
                 
@@ -177,7 +177,7 @@ export default function HouseForm() {
             <div className="mb-4 w-full">
               <label
                 htmlFor="checkOutDate"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 font-Josefin text-[15px]"
               >
                 Check-out Date
               </label>
@@ -187,7 +187,7 @@ export default function HouseForm() {
                 name="checkOutDate"
                 value={formData.checkOutDate}
                 onChange={handleChange}
-                className={`h-[70px] mt-1 px-3 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800 ${
+                className={`h-[70px] mt-1 px-3 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800 font-Josefin ${
                     errors.checkOutDate ? 'border-red-500' : ''
                   }`}
               />
@@ -197,7 +197,7 @@ export default function HouseForm() {
 
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-700 font-Josefin "
           >
             Message
           </label>
@@ -207,22 +207,22 @@ export default function HouseForm() {
             value={formData.message}
             placeholder="What would you like to know?"
             onChange={handleChange}
-            className="mt-1 px-3 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800"
+            className="font-Josefin mt-1 px-3 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800"
             rows={4}
           ></textarea>
 
           <div className="mt-4">
-            <h1>Estimated Price:</h1>
+            <h1  className="font-Poetsen text-[18px] font-bold">Estimated Price:</h1>
             {totalPrice > 0 && (
-              <div className="mt-2">
-                <p>Total Price: ${totalPrice}</p>
-                <p>Number of Days: {numDays}</p>
+              <div className="mt-2 ">
+                <p className="font-Poetsen text-[18px]">Total Price: ${totalPrice}</p>
+                <p className="font-Poetsen text-[18px]">Number of Days: {numDays}</p>
               </div>
             )}
           </div>
           <button
             type="submit" 
-            className="mt-4 w-full bg-[#3559E0] text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="font-Poetsen mt-4 w-full bg-[#3559E0] text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             Submit
           </button>
@@ -231,7 +231,7 @@ export default function HouseForm() {
         <button
           type="button"
           onClick={handleWhatsApp}
-          className="mt-4 w-full bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="mt-4 w-full bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2  focus:ring-green-500 font-Poetsen"
         >
           Communicate via WhatsApp
         </button>

@@ -6,9 +6,9 @@ const Description = () => {
     <div className=" relative w-full sm:px-16 px-6">
       <div className=" gap-5 flex justify-between items-start max-lg:flex-col">
         <div className="py-4 w-[60%] max-lg:w-auto">
-          <h2 className="text-2xl font-semibold">Description</h2>
+          <h2 className="text-2xl font-semibold font-Poetsen">Description</h2>
           <div>
-            <p>
+            <p className="font-Josefin">
               This executive Six-bedroom house Located in Runda is a luxurious
               and spacious property, perfect for those seeking a comfortable and
               stylish living environment. Heres a detailed description of the
@@ -22,77 +22,90 @@ const Description = () => {
             </p>
           </div>
 
-          <h2 className="mt-10 text-2xl font-semibold">Location</h2>
+          <h2 className="mt-10 text-2xl font-semibold font-Poetsen">Location</h2>
           <div>
-            <p>This executive Six-bedroom house Located in Runda is a luxurious
+            <p className="font-Josefin">
+              This executive Six-bedroom house Located in Runda is a luxurious
               and spacious property, perfect for those seeking a comfortable and
               stylish living environment. Heres a detailed description of the
               property Property Type Residential House Location Runda Nairobi
               Kenya Rent: 500,000 per month Key Features Six Bedrooms This house
-              boasts four generously</p>
+              boasts four generously
+            </p>
           </div>
 
-          <h2 className="mt-10 text-2xl font-semibold">Basic Info</h2>
+          <h2 className="mt-10 text-2xl font-semibold font-Poetsen">Basic Info</h2>
           <div className="mt-4">
             <div className="">
-              <h1>This executive Six-bedroom house Located in Runda is a luxurious
-              and spacious property, perfect for those seeking a comfortable and
-              stylish living environment. Heres a detailed description of the
-              property Property Type Residential House Location Runda Nairobi
-              Kenya Rent: 500,000 per month Key Features Six Bedrooms This house
-              boasts four generously</h1>
+              <p className="font-Josefin">
+                This executive Six-bedroom house Located in Runda is a luxurious
+                and spacious property, perfect for those seeking a comfortable
+                and stylish living environment. Heres a detailed description of
+                the property Property Type Residential House Location Runda
+                Nairobi Kenya Rent: 500,000 per month Key Features Six Bedrooms
+                This house boasts four generously
+              </p>
             </div>
           </div>
 
-          <h2 className="mt-10 text-2xl font-semibold">Amenities</h2>
+          <h2 className="mt-10 text-2xl font-semibold font-Poetsen">Amenities</h2>
           <div className="mt-4">
             <div className="">
-              <h1>This executive Six-bedroom house Located in Runda is a luxurious
-              and spacious property, perfect for those seeking a comfortable and
-              stylish living environment. Heres a detailed description of the
-              property Property Type Residential House Location Runda Nairobi
-              Kenya Rent: 500,000 per month Key Features Six Bedrooms This house
-              boasts four generously</h1>
+              <p className="font-Josefin">
+                This executive Six-bedroom house Located in Runda is a luxurious
+                and spacious property, perfect for those seeking a comfortable
+                and stylish living environment. Heres a detailed description of
+                the property Property Type Residential House Location Runda
+                Nairobi Kenya Rent: 500,000 per month Key Features Six Bedrooms
+                This house boasts four generously
+              </p>
             </div>
           </div>
 
-          <h2 className="mt-10 text-2xl font-semibold">Near by</h2>
+          <h2 className="mt-10 text-2xl font-semibold font-Poetsen">Near by</h2>
           <div className="mt-4">
             <div className="">
-              <h1>This executive Six-bedroom house Located in Runda is a luxurious
-              and spacious property, perfect for those seeking a comfortable and
-              stylish living environment. Heres a detailed description of the
-              property Property Type Residential House Location Runda Nairobi
-              Kenya Rent: 500,000 per month Key Features Six Bedrooms This house
-              boasts four generously</h1>
+              <p className="font-Josefin">
+                This executive Six-bedroom house Located in Runda is a luxurious
+                and spacious property, perfect for those seeking a comfortable
+                and stylish living environment. Heres a detailed description of
+                the property Property Type Residential House Location Runda
+                Nairobi Kenya Rent: 500,000 per month Key Features Six Bedrooms
+                This house boasts four generously
+              </p>
             </div>
           </div>
 
-          <h2 className="mt-10 text-2xl font-semibold">Reviews</h2>
+          <h2 className="mt-10 text-2xl font-semibold font-Poetsen">Reviews</h2>
           <div className="mt-4">
             <div className="">
-              <h1>This executive Six-bedroom house Located in Runda is a luxurious
-              and spacious property, perfect for those seeking a comfortable and
-              stylish living environment. Heres a detailed description of the
-              property Property Type Residential House Location Runda Nairobi
-              Kenya Rent: 500,000 per month Key Features Six Bedrooms This house
-              boasts four generously</h1>
+              <p className="font-Josefin">
+                This executive Six-bedroom house Located in Runda is a luxurious
+                and spacious property, perfect for those seeking a comfortable
+                and stylish living environment. Heres a detailed description of
+                the property Property Type Residential House Location Runda
+                Nairobi Kenya Rent: 500,000 per month Key Features Six Bedrooms
+                This house boasts four generously
+              </p>
             </div>
           </div>
 
-          <h2 className="mt-10 text-2xl font-semibold">Comments</h2>
+          <h2 className="mt-10 text-2xl font-semibold font-Poetsen">Comments</h2>
           <div className="mt-4">
             <div className="">
-              <h1> This executive Six-bedroom house Located in Runda is a luxurious
-              and spacious property, perfect for those seeking a comfortable and
-              stylish living environment. Heres a detailed description of the
-              property Property Type Residential House Location Runda Nairobi
-              Kenya Rent: 500,000 per month Key Features Six Bedrooms This house
-              boasts four generously </h1>
+              <p className="font-Josefin">
+                {" "}
+                This executive Six-bedroom house Located in Runda is a luxurious
+                and spacious property, perfect for those seeking a comfortable
+                and stylish living environment. Heres a detailed description of
+                the property Property Type Residential House Location Runda
+                Nairobi Kenya Rent: 500,000 per month Key Features Six Bedrooms
+                This house boasts four generously{" "}
+              </p>
             </div>
           </div>
         </div>
-        <div className="w-[40%] py-4 max-lg:w-full" >
+        <div className="w-[40%] py-4 max-lg:w-full">
           <HouseForm />
         </div>
       </div>
