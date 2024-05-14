@@ -39,7 +39,7 @@ export default function CarDetails() {
           <div className="w-[75%] max-lg:w-full relative">
             <div className="relative">
               <img
-                className="h-[427px] w-full lg:rounded-s-xl lg:rounded-xl max-lg:object-fit max-lg:h-auto cursor-pointer"
+                className="h-[427px] w-full lg:rounded-s-xl  max-lg:object-fit max-lg:h-auto cursor-pointer"
                 alt=""
                 src={carImageURL}
                 onClick={() => openModal(carImageURL)}
