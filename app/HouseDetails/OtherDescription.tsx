@@ -121,7 +121,7 @@ const Description = () => {
                         This executive Six-bedroom house located in Runda is a
                         luxurious and spacious property, perfect for those
                         seeking a comfortable and stylish living environment.
-                        Here's a detailed description of the property Property
+                        Heres a detailed description of the property Property
                         Type Residential House Location Runda Nairobi Kenya
                         Rent: 500,000 per month Key Features Six Bedrooms This
                         house boasts four generously.This executive Six-bedroom
