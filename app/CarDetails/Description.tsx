@@ -30,22 +30,22 @@ const Description = () => {
   ];
 
   return (
-    <div className="flex justify-between max-lg:flex-wrap ">
-      <div className="px-4 py-4 w-[60%] max-md:w-auto">
-        <h1 className="text-4xl font-bold font-Briem">Tesla Model 3 2021</h1>
+    <div className="flex justify-between max-lg:flex-wrap">
+      <div className=" py-4 w-[60%] max-md:w-auto lg:px-4">
+        <h1 className="text-4xl font-bold font-Briem max-md:px-2">Tesla Model 3 2021</h1>
         
-        <h1 className="text-xl lg:hidden mt-4 mb-4 px-1">
+        <h1 className="text-xl lg:hidden mt-4 mb-4 lg:px-1 max-md:px-3">
           <span className="line-through font-Poetsen"> $59</span>
           <span className="font-extrabold font-Briem text-[24px]"> $53</span>
           <span className="font-Josefin"> /day</span>
         </h1>
-        <div className="lg:hidden">
+        <div className="lg:hidden max-md:px-2">
           <DateComponent />
         </div>
-        <h4 className="mt-2 font-Josefin max-md:text-[18px] max-md:hidden">
+        {/* <h4 className="mt-2 font-Josefin max-md:text-[18px] max-md:hidden">
           Standard Range Plus
-        </h4>
-        <h1 className="flex text-xl mt-2 items-center gap-1">
+        </h4> */}
+        <h1 className="flex text-xl mt-2 items-center gap-1 max-md:px-3">
           <span className="font-bold font-Briem  ">4.5</span>
           <span>
             <img src="/star.png" alt="" className="h-5" />
@@ -59,8 +59,8 @@ const Description = () => {
         <div className="max-md:hidden">
           <p className="font-Josefin max-md:text-[18px]">Tesla</p>
         </div>
-        <h2 className="mt-10 text-2xl font-semibold font-Briem">Overview</h2>
-        <p className="font-Josefin max-md:text-[18px]">
+        <h2 className="mt-10 text-2xl font-semibold font-Briem max-md:px-3">Overview</h2>
+        <p className="font-Josefin max-md:text-[18px] max-md:px-3">
           {showFullText ? (
             <>
               We hire 5 Seater Toyota Voxy & Noah Vans in Nairobi at affordable
@@ -85,16 +85,16 @@ const Description = () => {
           )}
         </p>
         <button
-          className="p-1 italic mb-2 text-[18px] mt-2 underline"
+          className="p-1 italic mb-2 text-[18px] mt-2 underline max-md:px-3"
           onClick={toggleView}
         >
           {showFullText ? "Less.." : "More.."}
         </button>
 
-        <h2 className="mt-10 text-2xl underline font-semibold font-Briem">
+        <h2 className="mt-10 text-2xl underline font-semibold font-Briem max-md:px-3">
           Car Features
         </h2>
-        <div>
+        <div className="max-md:px-3"> 
           {" "}
           <div className=" grid grid-cols-4 gap-4 justify-between mt-4 max-lg:grid-cols-3">
             {showAllFeatures
@@ -123,21 +123,21 @@ const Description = () => {
           </button>
         </div>
 
-        <h2 className="mt-10 text-2xl font-semibold font-Briem">Location</h2>
-        <div>
+        <h2 className="mt-10 text-2xl font-semibold font-Briem max-md:px-2">Location</h2>
+        <div className="">
           <p><LocationMap /> </p>
         </div>
         
 
-        <h2 className="mt-10 text-2xl font-semibold font-Briem">Reviews</h2>
+        <h2 className="mt-10 text-2xl font-semibold font-Briem max-md:px-3">Reviews</h2>
         <div className="mt-4">
-          <div className="">
+          <div className="max-md:px-2">
             <Reviews />
           </div>
         </div>
-        <h2 className=" mt-10 text-2xl font-semibold font-Briem">Comments</h2>
+        <h2 className=" mt-10 text-2xl font-semibold font-Briem max-md:px-3">Comments</h2>
         <div className="mt-4">
-          <div className="">
+          <div className="max-md:px-2">
             <Comments />
           </div>
         </div>
