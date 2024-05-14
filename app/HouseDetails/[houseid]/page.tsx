@@ -19,7 +19,7 @@ export default function HouseDetails() {
           </h1>
         </div>
       </div>
-      <div className="flex gap-6 py-2 lg:mt-5 ">
+      <div className="flex py-2 lg:mt-5 ">
         <Description />
       </div>
       <div className="lg:mt-10">
