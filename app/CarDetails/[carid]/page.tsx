@@ -71,6 +71,7 @@ export default function CarDetails() {
         </div>
         <div className="w-[100%]">
           <Description />
+          <hr className="border-t-1 border-gray-300 my-2" />
         </div>
       </div>
       {/* Modal */}

@@ -90,7 +90,7 @@ export default function HouseForm() {
 
   return (
     <div>
-      <div className=" py-6 w-full h-full border-[2px] bg-white shadow-md rounded px-6 pt-6 pb-8 mb-4">
+      <div className=" py-6 w-full h-full border bg-white shadow-md rounded px-6 pt-6 pb-8 mb-4">
         <div>
           <Link href="/" className="flex justify-center items-center">
             <Image
