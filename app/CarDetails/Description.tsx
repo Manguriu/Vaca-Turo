@@ -41,6 +41,7 @@ const Description = () => {
         </h1>
         <div className="lg:hidden max-md:px-2">
           <DateComponent />
+          <hr className="border-t-1 border-gray-300 my-2 mt-8" />
         </div>
         {/* <h4 className="mt-2 font-Josefin max-md:text-[18px] max-md:hidden">
           Standard Range Plus
@@ -52,13 +53,14 @@ const Description = () => {
           </span>
           <span className="font-Briem">(106 trips)</span>
         </h1>
-
+        <hr className="border-t-1 border-gray-300 my-2 mt-8" />
         <h2 className=" max-md:hidden mt-10 text-2xl font-semibold font-Briem first-letter:">
           Cars Make
         </h2>
         <div className="max-md:hidden">
           <p className="font-Josefin max-md:text-[18px]">Tesla</p>
         </div>
+        <hr className="border-t-1 border-gray-300 my-2 mt-8" />
         <h2 className="mt-10 text-2xl font-semibold font-Briem max-md:px-3">Overview</h2>
         <p className="font-Josefin max-md:text-[18px] max-md:px-3">
           {showFullText ? (
@@ -90,6 +92,7 @@ const Description = () => {
         >
           {showFullText ? "Less.." : "More.."}
         </button>
+        <hr className="border-t-1 border-gray-300 my-2 mt-8" />
 
         <h2 className="mt-10 text-2xl underline font-semibold font-Briem max-md:px-3">
           Car Features
@@ -123,22 +126,26 @@ const Description = () => {
           </button>
         </div>
 
+
+        <hr className="border-t-1 border-gray-300 my-2 mt-8" />
         <h2 className="mt-10 text-2xl font-semibold font-Briem max-md:px-2">Location</h2>
         <div className="">
+        <hr className="border-t-1 border-gray-300 my-2 mt-8" />
           <p><LocationMap /> </p>
         </div>
         
-
-        <h2 className="mt-10 text-2xl font-semibold font-Briem max-md:px-3">Reviews</h2>
         <div className="mt-4">
           <div className="max-md:px-2">
+          <hr className="border-t-1 border-gray-300 my-2 mt-8" />
             <Reviews />
+            <hr className="border-t-1 border-gray-300 my-2 mt-8 max-md:hidden" />
           </div>
         </div>
         <h2 className=" mt-10 text-2xl font-semibold font-Briem max-md:px-3">Comments</h2>
         <div className="mt-4">
           <div className="max-md:px-2">
             <Comments />
+            <hr className="border-t-1 border-gray-300 my-2 mt-8" />
           </div>
         </div>
       </div>

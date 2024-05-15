@@ -16,7 +16,14 @@ export default function ModalC() {
       <div className="modal max-md:px-2 p-8" role="dialog" id="my_modal_8">
         <div className="h-[90%] w-[80%] max-lg:h-auto max-lg:w-auto bg-white overflow-y-auto px-2 py-2 rounded-2xl">
           <div className=" w-full rounded-xl bg-white ">
-            <h3 className="font-bold text-lg py-4 max-md:py-1 font-Briem">Tesla Model 3 2021</h3>
+            <div className="flex items-center justify-between px-2">
+              <h3 className="font-bold text-lg py-4 max-md:py-1 font-Briem justify-start">
+                Tesla Model 3 2021
+              </h3>
+              <a href="#" className="btn font-Briem max-md:text-[18px] justify-end">
+                Close
+              </a>
+            </div>
             <hr className="border-t-2 border-gray-200 my-2" />
           </div>
           <div className="max-h-[calc(90%-3rem)] overflow-y-auto pb-2">
@@ -73,11 +80,6 @@ export default function ModalC() {
             </div>
           </div>
           <hr className="border-t-2 border-gray-200 my-2" />
-          <div className="modal-action max-md:px-4 max-md:pb-4">
-            <a href="#" className="btn font-Briem max-md:text-[18px]">
-              Close
-            </a>
-          </div>
         </div>
       </div>
     </div>
