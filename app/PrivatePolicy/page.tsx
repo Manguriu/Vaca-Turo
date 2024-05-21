@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PrivatePolicy() {
   return (
-    <main className="max-w-screen-xl mx-auto flex flex-col my-auto items-center ">
+    <main className="max-w-screen-xl mx-auto flex flex-col my-auto items-center">
       <div className=" px-4 py-8">
         <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
 
