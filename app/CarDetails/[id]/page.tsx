@@ -5,7 +5,7 @@ import Description from "../Description";
 import ModalC from "../modalPop/ModalC";
 import { useCarDetails } from "../content/CarDetailsContext";
 import { useParams } from "next/navigation";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 interface CarDetailsProps {
@@ -155,3 +155,5 @@ export default function CarDetails() {
     </main>
   );
 }
+
+CarDetails.displayName = "CarDetails";
