@@ -20,7 +20,7 @@ export const footerLinks = [
 
 export const featuredCarsList = [
   {
-    id: 12,
+    id: 5451,
     make: "Toyota",
     photo: "/Noah.png",
     title: "Toyota Noah",
@@ -33,25 +33,22 @@ export const featuredCarsList = [
     details: {
       Name: "Toyota Noah 2f2 2005b ev",
       price: "$30/day",
-      oImg1: "/Noah1.jpg",
+      oImg1: "/Noah3.jpg",
       oImg2: "/Noah2.jpg",
-      oImg3: "Noah3.jpg",
-      rating: "4.5(106 trips)",
+      oImg3: "/Noah1.jpg",
+      rating:"4.5(106 trips)",
       overview:
         "The 5 Seater Toyota Voxy / Noah Van is a multi-passenger van The 5 Seater Toyota Voxy / Noah Van is a multi-passenger van The 5 Seater Toyota Voxy / Noah Van is a multi-passenger van The 5 Seater Toyota Voxy / Noah Van is a multi-passenger van",
       features: {
         type: "Automatic",
         doors: "4",
         passengers: "7",
-        lagauge: "3",
+        luggage: "3",
         drive: "FWD",
       },
       location: {
         location: "somewhere in somewhere",
       },
-      // Reviews: {
-      //   stars: "4",
-      // },
       Comments: {
         Name: "Jese Leos ",
         updateTime: "Joined on August 2014",
@@ -65,7 +62,7 @@ export const featuredCarsList = [
   },
 
   {
-    id: 13,
+    id: 5452,
     make: "Subaru",
     photo: "/Car1.jpg",
     title: "Subaru Legacy",
@@ -73,9 +70,80 @@ export const featuredCarsList = [
     type: "Manual",
     doors: "4",
     passengers: "5",
-    lagauge: "4",
+    lagauge: "50kg",
     drive: "AWD",
+    details: {
+      Name: "Subaru Legacy 2f2 2005b ev",
+      price: "$50/day",
+      oImg1: "/subie1.jpg",
+      oImg2: "/subie2.jpg",
+      oImg3: "/subie3.jpg",
+      rating:"5.0(106 trips)",
+      overview:
+        "The 5 Seater Toyota Voxy / Noah Van is a multi-passenger van The 5 Seater Toyota Voxy / Noah Van is a multi-passenger van The 5 Seater Toyota Voxy / Noah Van is a multi-passenger van The 5 Seater Toyota Voxy / Noah Van is a multi-passenger van",
+      features: {
+        type: "Manual",
+        doors: "4",
+        passengers: "5",
+        luggage: "50kg",
+        drive: "AWD",
+      },
+      location: {
+        location: "somewhere in somewhere",
+      },
+      Comments: {
+        Name: "Jese Leos ",
+        updateTime: "Joined on August 2014",
+        rating: "4",
+        Photo: "/person.jpg",
+        DateLocation: "Reviewed in the United Kingdom on March 3, 2017",
+        comment:
+          "This is my third Invicta Pro Diver. They are just fantastic value for money. This one arrived yesterday and the first thing I did was set the time, popped on an identical strap from another Invicta and went in the shower with it to test the waterproofing.... No problems.",
+      },
+    },
   },
+
+  // {
+  //   id: 5452,
+  //   make: "Subaru",
+  //   photo: "/Car1.jpg",
+  //   title: "Subaru Legacy",
+  //   price: "50",
+  //   type: "Manual",
+  //   doors: "4",
+  //   passengers: "5",
+  //   lagauge: "4",
+  //   drive: "AWD",
+  //   details: {
+  //     Name: "Subaru Legacy 2f2 2005b ev",
+  //     price: "50/day",
+  //     oImg1: "/subie1.jpg",
+  //     oImg2: "/subie2.jpg",
+  //     oImg3: "/subie3.jpg",
+  //     rating: "5.0 (10trips)",
+  //     overview:
+  //       "These stars are also known as six star group. The name reflects the fact that Fuji Heavy Industries was formed from capital contributions from five companies that sprang from Nakajima Aircraft",
+  //     features: {
+  //       type: "Manual",
+  //       doors: "4",
+  //       passengers: "5",
+  //       luggage: "4",
+  //       drive: "AWD",
+  //     },
+  //     location: {
+  //       location: "somewhere in somewhere",
+  //     },
+  //     Comments: {
+  //       id: 1,
+  //       rating: 5,
+  //       name: "King vac",
+  //       comment: "Great experience, loved the Cars!",
+  //       date: "2024-05-16",
+  //       time: "10:30 AM",
+  //       image: "/person.png",
+  //     },
+  //   },
+  // },
   {
     id: 14,
     make: "Toyota",
@@ -311,62 +379,54 @@ export const CarMakeList = [
   },
 ];
 
-
 export const CarbymakeListDetails = [
-  
-{
- id : 12,
- CrbymakeImage: "https://images.turo.com/media/vehicle/images/GVHAxJVFQ1OzX2rEEcSdTw.328x176.jpg",
- CrmakeName:"Jeep Wrangler 2xe 2021",
- CarmakeRating:"$5.0",
- CarmakePrice:"60",
- carmakeTrips:"67"
-},
+  {
+    id: 12,
+    CrbymakeImage:
+      "https://images.turo.com/media/vehicle/images/GVHAxJVFQ1OzX2rEEcSdTw.328x176.jpg",
+    CrmakeName: "Jeep Wrangler 2xe 2021",
+    CarmakeRating: "$5.0",
+    CarmakePrice: "60",
+    carmakeTrips: "67",
+  },
 
+  {
+    id: 12,
+    CrbymakeImage:
+      "https://images.turo.com/media/vehicle/images/Rn3ATfRaRbeRyd3EFmSOFA.328x176.jpg",
+    CrmakeName: "Jeep Wrangler 4xe 2022",
+    CarmakeRating: "$4.2",
+    CarmakePrice: "56",
+    carmakeTrips: "106",
+  },
 
-{
-  id : 12,
-  CrbymakeImage: "https://images.turo.com/media/vehicle/images/Rn3ATfRaRbeRyd3EFmSOFA.328x176.jpg",
-  CrmakeName:"Jeep Wrangler 4xe 2022",
-  CarmakeRating:"$4.2",
-  CarmakePrice:"56",
-  carmakeTrips:"106"
- },
+  {
+    id: 12,
+    CrbymakeImage:
+      "https://images.turo.com/media/vehicle/images/xQq4ecSbQCqmzDYtjWjg5w.328x176.jpg",
+    CrmakeName: "Jeep Wrangler 2xe 2023",
+    CarmakeRating: "$4.7",
+    CarmakePrice: "45",
+    carmakeTrips: "105",
+  },
 
+  {
+    id: 12,
+    CrbymakeImage:
+      "https://images.turo.com/media/vehicle/images/Zz-2iYQhTBqGarmlMtJfjA.328x176.jpg",
+    CrmakeName: "Jeep Wrangler 4xe 2024",
+    CarmakeRating: "$4.99",
+    CarmakePrice: "70",
+    carmakeTrips: "107",
+  },
 
- {
-  id : 12,
-  CrbymakeImage: "https://images.turo.com/media/vehicle/images/xQq4ecSbQCqmzDYtjWjg5w.328x176.jpg",
-  CrmakeName:"Jeep Wrangler 2xe 2023",
-  CarmakeRating:"$4.7",
-  CarmakePrice:"45",
-  carmakeTrips:"105"
- },
-
-
-
- {
-  id : 12,
-  CrbymakeImage: "https://images.turo.com/media/vehicle/images/Zz-2iYQhTBqGarmlMtJfjA.328x176.jpg",
-  CrmakeName:"Jeep Wrangler 4xe 2024",
-  CarmakeRating:"$4.99",
-  CarmakePrice:"70",
-  carmakeTrips:"107"
- },
-
-
- {
-  id : 12,
-  CrbymakeImage: "https://images.turo.com/media/vehicle/images/ROEL1qgeQay26enQ3mGg-w.328x176.jpg",
-  CrmakeName:"Jeep Wrangler 2xe 2025",
-  CarmakeRating:"$5.0",
-  CarmakePrice:"51",
-  carmakeTrips:"10"
- },
-
-
-
-
-
-
-]
+  {
+    id: 12,
+    CrbymakeImage:
+      "https://images.turo.com/media/vehicle/images/ROEL1qgeQay26enQ3mGg-w.328x176.jpg",
+    CrmakeName: "Jeep Wrangler 2xe 2025",
+    CarmakeRating: "$5.0",
+    CarmakePrice: "51",
+    carmakeTrips: "10",
+  },
+];
