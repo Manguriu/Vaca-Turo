@@ -1,15 +1,7 @@
-// import React from 'react'
-
-// export default function dateCompMaxMd() {
-//   return (
-//     <div>
-      
-//     </div>
-//   )
-// }
 
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface Errors {
   pickUpDate?: string;
@@ -27,7 +19,18 @@ interface Location {
   address?: string;
 }
 
-export default function dateCompMaxMd() {
+interface CartItem {
+  pickUpDate: string;
+  ReturnDate: string;
+  pickUpTime: string;
+  ReturnTime: string;
+  location: string;
+  phoneNumber: string;
+}
+
+
+export default function DateComponent() {
+  const router = useRouter();
   const [pickUpDate, setPickUpDate] = useState("");
   const [ReturnDate, setReturnDate] = useState("");
   const [pickUpTime, setPickUpTime] = useState("");
@@ -64,7 +67,6 @@ export default function dateCompMaxMd() {
     setErrors((prevState) => ({ ...prevState, location: "" })); // Clear location error if selected
     console.log("Selected Location:", location);
   };
-  
 
   const getSelectedLocationName = () => {
     const selectedLocation = locations.find(
@@ -98,7 +100,7 @@ export default function dateCompMaxMd() {
     setErrors((prevState) => ({ ...prevState, phoneNumber: "" }));
   };
 
-  const handleSubmit = () => {
+  const handleAddToCart = () => {
     let formErrors = {};
 
     // Date format validation (YYYY-MM-DD)
@@ -135,13 +137,21 @@ export default function dateCompMaxMd() {
       return;
     }
 
-    console.log("Submitted Data:");
-    console.log("Check-in Date:", pickUpDate);
-    console.log("Check-out Date:", ReturnDate);
-    console.log("Check-in Time:", pickUpTime);
-    console.log("Check-out Time:", ReturnTime);
-    console.log("Selected Location:", getSelectedLocationName());
-    console.log("Phone Number:", phoneNumber);
+    // Save the data to localStorage (or another storage method)
+    const cartItem = {
+      pickUpDate,
+      ReturnDate,
+      pickUpTime,
+      ReturnTime,
+      location: getSelectedLocationName(),
+      phoneNumber,
+    };
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    cart.push(cartItem);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Navigate to the checkout page
+    router.push("/CarCheckOut"); // Replace with your actual checkout page route
   };
 
   return (
@@ -298,13 +308,14 @@ export default function dateCompMaxMd() {
 
         <div className="mb-4 mt-5 w-full">
           <button
-            onClick={handleSubmit}
+            onClick={handleAddToCart}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline max-md:w-full"
           >
-            Submit
+            Add to Cart and Proceed to Checkout
           </button>
         </div>
       </div>
     </div>
   );
 }
+

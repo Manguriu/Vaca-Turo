@@ -68,7 +68,7 @@ export default function PrivatePolicy() {
           or opt-out of non-essential cookies.
         </p>
 
-        <h2 className="text-xl font-semibold mb-2">Children's Privacy</h2>
+        <h2 className="text-xl font-semibold mb-2">Childrens Privacy</h2>
         <p className="mb-4">
           Our services are not directed to individuals under the age of 18. We
           do not knowingly collect personal information from children. If you
@@ -91,7 +91,6 @@ export default function PrivatePolicy() {
           <a href="mailto:contact@kingvacrentals.com">
             contact@kingvacrentals.com
           </a>
-          .
         </p>
       </div>
     </main>
