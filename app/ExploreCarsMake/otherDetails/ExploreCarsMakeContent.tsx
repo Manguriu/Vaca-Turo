@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { featuredCarsList } from "@/constants";
@@ -21,7 +23,9 @@ type ExploreCarsMakeContentProps = {
   selectedMake: string | null;
 };
 
-const ExploreCarsMakeContent = ({ selectedMake }: ExploreCarsMakeContentProps) => {
+const ExploreCarsMakeContent = ({
+  selectedMake,
+}: ExploreCarsMakeContentProps) => {
   const router = useRouter();
   const [filteredModels, setFilteredModels] = useState<CarModel[]>([]);
 
@@ -74,10 +78,12 @@ const ExploreCarsMakeContent = ({ selectedMake }: ExploreCarsMakeContentProps) =
           </Link>
         ))
       ) : (
-        <div className="text-center">
-          <h2 className="text-2xl font-bold">Car not found</h2>
-          <p>We couldnt find any cars for the selected make.</p>
-          
+        <div className="flex justify-center items-center h-[60vh]">
+          <div className=" text-center">
+            <img src="/notfound.jpg" className="h-full" />
+            <h2 className="text-[60px] font-bold"> Sorry No {selectedMake} found</h2>
+            <p>We couldnt find any cars for the selected make.</p>
+          </div>
         </div>
       )}
     </div>
