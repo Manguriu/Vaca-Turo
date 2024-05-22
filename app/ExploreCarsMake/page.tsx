@@ -2,7 +2,7 @@
 
 import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import ExploreCarsMakeContent from "./otherDetails/ExploreCarsMakeContent";
+import ExploreCarsMakeContent from "./otherDetails/ExploreCarsMakeClient";
 
 export default function ExploreCarsMake() {
   const searchParams = useSearchParams();
