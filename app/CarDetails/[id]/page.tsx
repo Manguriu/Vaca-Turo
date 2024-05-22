@@ -64,6 +64,7 @@ export default function CarDetails() {
 
   const {
     details: {
+      make,
       Name,
       price,
       oImg1,
@@ -73,7 +74,6 @@ export default function CarDetails() {
       overview,
       features,
       location,
-      Comments,
     },
   } = details;
 
@@ -107,7 +107,7 @@ export default function CarDetails() {
               <img
                 className="h-[200px] w-full object-cover rounded-e-xl cursor-pointer"
                 alt=""
-                src={details.details.oImg3}
+                src={oImg3}
                 onClick={() => openModal(oImg3)}
               />
             </div>
@@ -115,22 +115,13 @@ export default function CarDetails() {
         </div>
         <div className="">
           <Description
-         
-         name={Name}
-         price={price}
-         rating={rating}
-         overview={overview}
-         features={features}
-         location={location.location}
-         comments={{
-           name: Comments.Name,
-           updateTime: Comments.updateTime,
-           rating: Comments.rating,
-           photo: Comments.Photo,
-           dateLocation: Comments.DateLocation,
-           comment: Comments.comment,
-         }}
-          
+            make={make}
+            name={Name}
+            price={price}
+            rating={rating}
+            overview={overview}
+            features={features}
+            location={location.location}
           />
           <hr className="border-t-1 border-gray-300 my-2" />
         </div>

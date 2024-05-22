@@ -18,35 +18,37 @@ interface Comments {
   rating: string;
   photo: string;
   dateLocation: string;
-  comment: string;
+
 }
 
 interface DescriptionProps {
+  make:string;
   name: string;
   price: string;
   rating: string;
   overview: string;
   features: Features;
   location: string;
-  comments: Comments;
 }
 
 const Description = ({
+  make,
   name,
   price,
   rating,
   overview,
   features,
   location,
-  comments,
+ 
 }: {
+  make:any;
   name: any;
   price: any;
   rating: any;
   overview: any;
   features: any;
   location: any;
-  comments: any;
+ 
 }) => {
   const [showFullText, setShowFullText] = useState(false);
   const [showAllFeatures, setShowAllFeatures] = useState(false);
@@ -83,9 +85,9 @@ const Description = ({
         <h2 className=" max-md:hidden mt-10 text-2xl font-semibold font-Briem first-letter:">
           Cars Make
         </h2>
-        {/* <div className="max-md:hidden">
-          <p className="font-Josefin max-md:text-[18px]">Tesla</p>
-        </div> */}
+        <div className="">
+          <h1 className="font-Josefin max-md:text-[18px]">{make}</h1>
+        </div>
 
         <h2 className="mt-10 text-2xl font-semibold font-Briem max-md:px-3">
           Overview
@@ -130,7 +132,7 @@ const Description = ({
                   className="w-6 h-6 mr-2"
                 />
                 <span>
-                  <strong>Luggage:</strong> {features.luggage}
+                  <strong>lagauge:</strong> {features.luggage}
                 </span>
               </li>
               <li className="flex items-center">

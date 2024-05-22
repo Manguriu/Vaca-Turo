@@ -21,6 +21,7 @@ interface Comments {
 
 interface CarDetails {
   id: number;
+  make:string;
   Name: string;
   price: string;
   oImg1: string;
