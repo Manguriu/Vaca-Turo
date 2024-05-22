@@ -76,7 +76,7 @@ const ExploreCarsMakeContent = ({ selectedMake }: ExploreCarsMakeContentProps) =
       ) : (
         <div className="text-center">
           <h2 className="text-2xl font-bold">Car not found</h2>
-          <p>We couldn't find any cars for the selected make.</p>
+          <p>We couldnt find any cars for the selected make.</p>
           
         </div>
       )}
