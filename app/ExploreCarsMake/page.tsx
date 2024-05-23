@@ -52,7 +52,6 @@ export default function ExploreCarsMake() {
         <h2 className="font-bold px-4 max-md:text-[20px]">
           Discover KingVac Rentals the worlds largest car sharing marketplace
         </h2>
-        <h1 className="text-4xl mt-4 font-bold">Rent a {selectedMake}</h1>
       </div>
       <div className="flex gap-6 justify-center items-center mt-8">
         <div className="flex justify-center items-center lg:px-4">
@@ -60,12 +59,15 @@ export default function ExploreCarsMake() {
             fallback={
               <div>
                 <Skeleton />
-                <Skeleton count={5} />{" "}
-                Loading...
+                <Skeleton count={5} /> Loading...
               </div>
             }
           >
+            <div className="flex flex-col">
+            <h1 className=" flex items-center justify-center text-4xl mt-4 font-bold">Rent a {selectedMake}</h1>
             <ExploreCarsMakeClient />
+            </div>
+            
           </Suspense>
         </div>
       </div>
