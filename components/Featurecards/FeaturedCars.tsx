@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import { CustomFilter, SearchBar } from "../Index";
 import CarCard from "./CarCard";
-import Link from "next/link";
+
 
 const FeaturedCars = () => {
   return (

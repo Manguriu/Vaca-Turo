@@ -1,19 +1,32 @@
 "use client";
 
-
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
-import { usePathname } from 'next/navigation';
-
-const Navbar = () => {
+const Navbar = ({ userName }: { userName: string }) => {
   const pathname = usePathname();
   const [showMenu, setShowMenu] = useState(false);
+  const router = useRouter();
+
+  const handleLogout = () => {
+    localStorage.removeItem("isAuthenticated");
+    localStorage.removeItem("userName");
+    router.push("/Login");
+  };
+
+  const goToHomePage = () => {
+    router.push("/");
+  };
 
   const handleClick = () => {
     setShowMenu((prevShowMenu) => !prevShowMenu);
   };
 
-  const handleMenuClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
+  const handleMenuClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    id: string
+  ) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
@@ -21,8 +34,9 @@ const Navbar = () => {
     }
   };
 
-  // Check if homepage
+  // Check if homepage or Admin page
   const isHomepage = pathname === "/";
+  const isAdminPage = pathname === "/Admin";
 
   return (
     <nav className="border-gray-200 dark:bg-gray-800 dark:border-gray-700 sm:px-10">
@@ -61,15 +75,26 @@ const Navbar = () => {
           <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
             {!isHomepage && (
               <li>
-                <a
-                  href="/"
-                  className="lg:text-[18px] font-Josefin block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
-                  aria-current="page"
-                >
-                  Home
-                </a>
+                <button onClick={goToHomePage} className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                  <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                   Home
+                  </span>
+                </button>
               </li>
             )}
+            {isAdminPage && (
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+                >
+                  <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    Logout
+                  </span>
+                </button>
+              </li>
+            )}
+
             {isHomepage && (
               <>
                 <li>
