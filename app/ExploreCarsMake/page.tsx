@@ -42,7 +42,7 @@ export default function ExploreCarsMake() {
     <main className="max-w-screen-xl mx-auto flex flex-col my-auto items-center">
       <div className="lg:mt-20 text-center max-md:mt-[4rem]">
         <h2 className="font-bold px-4 max-md:text-[20px]">
-          Discover KingVac Rentals the world's largest car sharing marketplace
+          Discover KingVac Rentals the worlds largest car sharing marketplace
         </h2>
         <h1 className="text-4xl mt-4 font-bold">Rent a Car</h1>
       </div>
