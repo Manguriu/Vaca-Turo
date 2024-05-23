@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { Navbar } from "@/components/Index";
 import { Footer } from "@/components/Index";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./globals.css";
+import { CarDetailsProvider } from "./CarDetails/content/CarDetailsContext";
 
 export const metadata: Metadata = {
   title: "KingVac Rentals",
@@ -18,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth focus:scroll-auto">
       <body className="relative">
-        <Navbar />
-        {children}
+        <Navbar userName={""} />
+        <CarDetailsProvider>{children}</CarDetailsProvider>
         <Footer />
       </body>
     </html>
