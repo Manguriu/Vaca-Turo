@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const OffersM = () => {
+const OffersM = ({Amenities}:{Amenities:any}) => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   const openModal = () => {
@@ -26,7 +26,7 @@ const OffersM = () => {
             <img src="/Kitchen.png" className="h-7" />
           </div>
           <div>
-            <h1 className="font-semibold">Kitchen </h1>
+            <h1 className="font-semibold">{Amenities.Amenities1} </h1>
           </div>
         </div>
         <div className="flex items-center gap-4">
@@ -34,7 +34,7 @@ const OffersM = () => {
             <img src="/Kitchen.png" className="h-7" />
           </div>
           <div>
-            <h1 className="font-semibold">Something </h1>
+            <h1 className="font-semibold">{Amenities.Amenities2} </h1>
           </div>
         </div>
         <div className="flex items-center gap-4">
@@ -42,7 +42,7 @@ const OffersM = () => {
             <img src="/Kitchen.png" className="h-7" />
           </div>
           <div>
-            <h1 className="font-semibold">Wifi </h1>
+            <h1 className="font-semibold">{Amenities.Amenities3} </h1>
           </div>
         </div>
         <div className="flex items-center gap-4">
@@ -50,7 +50,7 @@ const OffersM = () => {
             <img src="/Kitchen.png" className="h-7" />
           </div>
           <div>
-            <h1 className="font-semibold">Dedicated works place </h1>
+            <h1 className="font-semibold">{Amenities.Amenities4} </h1>
           </div>
         </div>
         <button
@@ -89,7 +89,7 @@ const OffersM = () => {
                         <img src="/Kitchen.png" className="h-7" />
                       </div>
                       <div>
-                        <h1 className="font-semibold">Kitchen </h1>
+                        <h1 className="font-semibold">{Amenities.Amenities3} </h1>
                       </div>
                     </div>
                     <hr className="border-t-1 border-gray-300 my-2" />
@@ -98,7 +98,7 @@ const OffersM = () => {
                         <img src="/Kitchen.png" className="h-7" />
                       </div>
                       <div>
-                        <h1 className="font-semibold">Wifi </h1>
+                        <h1 className="font-semibold">{Amenities.Amenities1} </h1>
                       </div>
                     </div>
                     <hr className="border-t-1 border-gray-300 my-2" />
@@ -107,90 +107,14 @@ const OffersM = () => {
                         <img src="/Kitchen.png" className="h-7" />
                       </div>
                       <div>
-                        <h1 className="font-semibold">Dedicated works place</h1>
+                        <h1 className="font-semibold">{Amenities.Amenities1}</h1>
                       </div>
                     </div>
                     <hr className="border-t-1 border-gray-300 my-2" />
                   </div>
                 </ul>
               </li>
-            </ul>
-            <ul className="mt-8">
-              <li>
-                <h3 className="text-md font-semibold mb-4">
-                  Bedroom and Laundry
-                </h3>
-                <ul className="ml-6 mt-10">
-                  <div className="mt-2 flex flex-col gap-6">
-                    <div className="flex items-center gap-4">
-                      <div>
-                        <img src="/Kitchen.png" className="h-7" />
-                      </div>
-                      <div>
-                        <h1 className="font-semibold">Kitchen </h1>
-                      </div>
-                    </div>
-                    <hr className="border-t-1 border-gray-300 my-2" />
-                    <div className="flex items-center gap-4">
-                      <div>
-                        <img src="/Kitchen.png" className="h-7" />
-                      </div>
-                      <div>
-                        <h1 className="font-semibold">Wifi </h1>
-                      </div>
-                    </div>
-                    <hr className="border-t-1 border-gray-300 my-2" />
-                    <div className="flex items-center gap-4">
-                      <div>
-                        <img src="/Kitchen.png" className="h-7" />
-                      </div>
-                      <div>
-                        <h1 className="font-semibold">Dedicated works place</h1>
-                      </div>
-                    </div>
-                    <hr className="border-t-1 border-gray-300 my-2" />
-                  </div>
-                </ul>
-              </li>
-            </ul>
-            <ul className="mt-8">
-              <li>
-                <h3 className="text-md font-semibold mb-4">
-                  Bedroom and Laundry
-                </h3>
-                <ul className="ml-6 mt-10">
-                  <div className="mt-2 flex flex-col gap-6">
-                    <div className="flex items-center gap-4">
-                      <div>
-                        <img src="/Kitchen.png" className="h-7" />
-                      </div>
-                      <div>
-                        <h1 className="font-semibold">Kitchen </h1>
-                      </div>
-                    </div>
-                    <hr className="border-t-1 border-gray-300 my-2" />
-                    <div className="flex items-center gap-4">
-                      <div>
-                        <img src="/Kitchen.png" className="h-7" />
-                      </div>
-                      <div>
-                        <h1 className="font-semibold">Wifi </h1>
-                      </div>
-                    </div>
-                    <hr className="border-t-1 border-gray-300 my-2" />
-                    <div className="flex items-center gap-4">
-                      <div>
-                        <img src="/Kitchen.png" className="h-7" />
-                      </div>
-                      <div>
-                        <h1 className="font-semibold">Dedicated works place</h1>
-                      </div>
-                    </div>
-                    <hr className="border-t-1 border-gray-300 my-2" />
-                  </div>
-                </ul>
-              </li>
-            </ul>
+            </ul>       
           </div>
         </div>
       </dialog>

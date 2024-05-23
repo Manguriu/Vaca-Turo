@@ -6,6 +6,8 @@ import { featuredCarsList } from "@/constants";
 import Link from "next/link";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+// import { useCarDetails } from "@/context/CarDetailsContext";
+import { useCarDetails } from "@/app/CarDetails/content/CarDetailsContext";
 
 // Define the type for the model objects
 type CarModel = {
@@ -26,28 +28,7 @@ const ExploreCarsMakeClient = () => {
   const selectedMake = searchParams.get("make");
   const [filteredModels, setFilteredModels] = useState<CarModel[]>([]);
   const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   if (!selectedMake) {
-  //     const models = featuredCarsList.filter((model) =>
-  //       model.make.includes(selectedMake)
-  //     ) as unknown as CarModel[];
-  //     setFilteredModels(models);
-  //     setLoading(false);
-  //   } else {
-  //     setLoading(false);
-  //     router.push("/"); // Redirect to home if no make is selected
-  //   }
-  // }, [selectedMake, router]);
-
-  // if (loading) {
-  //   return (
-  //     <div>
-  //       <Skeleton />
-  //       <Skeleton count={5} />
-  //     </div>
-  //   );
-  // }
+  const { setCarDetails } = useCarDetails();
 
   useEffect(() => {
     if (!selectedMake) {
@@ -65,6 +46,10 @@ const ExploreCarsMakeClient = () => {
       }, 500); // Adjust delay as needed
     }
   }, [selectedMake, router]);
+
+  const handleCarClick = (car: any) => {
+    setCarDetails((prevDetails) => [...prevDetails, car]);
+  };
 
   if (loading) {
     return (
@@ -97,7 +82,10 @@ const ExploreCarsMakeClient = () => {
         {filteredModels.length > 0 ? (
           filteredModels.map((details) => (
             <Link href={`/CarDetails/${details.id}`} key={details.id}>
-              <div className="card card-compact w-72 bg-base-100 shadow-xl mb-4 py-5">
+              <div
+                className="card card-compact w-72 bg-base-100 shadow-xl mb-4 py-5"
+                onClick={() => handleCarClick(details)}
+              >
                 <figure>
                   <img
                     src={details.photo}

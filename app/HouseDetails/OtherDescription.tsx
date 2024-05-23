@@ -2,32 +2,32 @@
 
 import React from "react";
 import HouseForm from "./HouseForm";
-import DescriptionH from "./modals/DescriptionH";
+// import DescriptionH from "./modals/DescriptionH";
 import OffersM from "./modals/OffersM";
 import Comments from "./modals/Comments";
 import Reviews from "./modals/Reviews";
 
-const Description = () => {
+const Description = ({ OtherDetails }: { OtherDetails: any }) => {
   return (
     <div className=" relative w-full sm:px-16 px-6">
       <div className=" lg:gap-12 flex justify-between items-start max-lg:flex-col">
         <div className="py-4 w-[60%] max-lg:w-auto">
           <div>
             <h2 className="text-xl font-semibold font-Poetsen">
-              6 Bed House with En Suite at Runda
+              {OtherDetails.Name}
             </h2>
             <div className="leading-8">
               <ul className="flex gap-1 items-center">
                 <li>
-                  2 guests <span>.</span>
+                  {OtherDetails.NoGuests} guests <span>.</span>
                 </li>
                 <li>
-                  1 bedroom <span>.</span>
+                  {OtherDetails.Bedrooms} bedroom <span>.</span>
                 </li>
                 <li>
-                  1 bed <span>.</span>
+                  {OtherDetails.Beds} bed <span>.</span>
                 </li>
-                <li>1 bath</li>
+                <li>{OtherDetails.Bathrooms} bath</li>
               </ul>
               <div>
                 <span className="flex text-xl items-center gap-1">
@@ -36,9 +36,9 @@ const Description = () => {
                       <img src="/star.png" alt="" className="h-5" />
                     </li>
                     <li>.</li>
-                    <li className="font-bold font-Briem">4.5</li>
+                    <li className="font-bold font-Briem">{OtherDetails.rating}</li>
                     <li>.</li>
-                    <li className="underline font-Josefin">16 reviews</li>
+                    <li className="underline font-Josefin">{OtherDetails.reviews} reviews</li>
                   </ul>
                 </span>
               </div>
@@ -66,11 +66,15 @@ const Description = () => {
           </div>
 
           {/* description modal */}
-          <DescriptionH />
+          {/* <DescriptionH  OtherDetails={OtherDetails.Longdescription}/> */}
+          <p className="font-Josefin py-4">
+          {OtherDetails.Longdescription}
+          </p>
+
           <hr className="border-t-1 border-gray-300 my-2 mt-6" />
 
           {/* Place offer Modal */}
-          <OffersM />
+          <OffersM Amenities={OtherDetails.Amenities} />
           <hr className="border-t-1 border-gray-300 my-2 mt-8" />
 
           <div className="w-[40%] py-4 max-lg:w-full lg:hidden">
@@ -82,8 +86,6 @@ const Description = () => {
 
           <Comments />
           <hr className="border-t-1 border-gray-300 my-2 mt-8" />
-
-         
         </div>
         <div className="w-[40%] py-4 max-lg:w-full max-lg:hidden">
           <HouseForm />

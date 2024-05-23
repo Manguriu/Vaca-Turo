@@ -25,18 +25,22 @@ const Host = () => {
           <div className="flex flex-wrap justify-center gap-2 max-lg:gap-10">
             {HouseDetailsList.map((details) => (
               <Link href={`/HouseDetails/${details.id}`} key={details.id}>
-                <div className="card w-80 bg-base-100 shadow-xl">
+                <div className="card w-80 bg-base-100 shadow-xl h-[400px]">
                   <figure>
-                    <img src={details.HouseDetailsListimage} alt="house" />
+                    <img src={details.HouseDetailsListimage} alt="house" className="h-fit"/>
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title font-Briem">
                       {details.HouseName}
-                      <div className="badge badge-secondary">New</div>
                     </h2>
-                    <p className="max-lg:hidden lg:font-Josefin lg:text-[18px]">
+                    <div className="font-Briem flex flex-col">
+                      <div className="font-Briem text-[20px]">Price: {details.price} / day</div>
+                      <div className="font-Briem  font-semibold mt-2">Discount: <span className="badge badge-secondary"> {details.discount}</span></div>
+                     
+                      </div>
+                    {/* <p className="max-lg:hidden lg:font-Josefin lg:text-[18px]">
                       {details.Shortdescription}
-                    </p>
+                    </p> */}
                     <div className="card-actions justify-end mt-2">
                       <button
                         onClick={() =>
@@ -44,7 +48,7 @@ const Host = () => {
                         }
                         data-twe-ripple-init
                         data-twe-ripple-color="light"
-                        className=" font-Josefin max-md:text-[14px] max-lg:w-full max-lg:justify-center mb-2 flex rounded bg-[#1da1f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                        className="lg:w-full font-Josefin max-md:text-[14px] max-lg:w-full max-lg:justify-center lg:justify-center mb-2 flex rounded bg-[#1da1f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
                       >
                         View
                       </button>
