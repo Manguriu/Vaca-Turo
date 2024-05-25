@@ -1,6 +1,5 @@
 import React from "react";
 import DateComponent from "./DateComponent";
-import dateCompMaxMd from "./dateCompMaxMd"
 import Reviews from "./Reviews";
 import Comments from "./Comments";
 import { useState } from "react";
