@@ -7,16 +7,25 @@ import OffersM from "./modals/OffersM";
 import Comments from "./modals/Comments";
 import Reviews from "./modals/Reviews";
 
-const Description = ({ OtherDetails }: { OtherDetails: any }) => {
+const Description = ({
+  OtherDetails,
+  Price,
+}: {
+  OtherDetails: any;
+  Price: any;
+}) => {
   return (
     <div className=" relative w-full sm:px-16 px-6">
       <div className=" lg:gap-12 flex justify-between items-start max-lg:flex-col">
         <div className="py-4 w-[60%] max-lg:w-auto">
           <div>
-            <h2 className="text-xl font-semibold font-Poetsen">
+            <h2 className="lg:text-4xl font-semibold font-Poetsen">
               {OtherDetails.Name}
             </h2>
-            <div className="leading-8">
+            <h1 className="text-xl mt-3">
+              <span className="font-extrabold">{Price.price}</span>
+            </h1>
+            <div className="leading-8 mt-3">
               <ul className="flex gap-1 items-center">
                 <li>
                   {OtherDetails.NoGuests} guests <span>.</span>
@@ -30,22 +39,26 @@ const Description = ({ OtherDetails }: { OtherDetails: any }) => {
                 <li>{OtherDetails.Bathrooms} bath</li>
               </ul>
               <div>
-                <span className="flex text-xl items-center gap-1">
+                <span className="flex text-xl items-center gap-1 mt-3">
                   <ul className="flex gap-1 items-center">
                     <li>
                       <img src="/star.png" alt="" className="h-5" />
                     </li>
                     <li>.</li>
-                    <li className="font-bold font-Briem">{OtherDetails.rating}</li>
+                    <li className="font-bold font-Briem">
+                      {OtherDetails.rating}
+                    </li>
                     <li>.</li>
-                    <li className="underline font-Josefin">{OtherDetails.reviews} reviews</li>
+                    <li className="underline font-Josefin">
+                      {OtherDetails.reviews} reviews
+                    </li>
                   </ul>
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 max-md:bg-slate-100 max-md:px-4">
             <hr className="border-t-1 border-gray-300 my-2" />
             <div className="flex items-center mb-4 mt-6">
               <img
@@ -67,9 +80,7 @@ const Description = ({ OtherDetails }: { OtherDetails: any }) => {
 
           {/* description modal */}
           {/* <DescriptionH  OtherDetails={OtherDetails.Longdescription}/> */}
-          <p className="font-Josefin py-4">
-          {OtherDetails.Longdescription}
-          </p>
+          <p className="font-Josefin py-4">{OtherDetails.Longdescription}</p>
 
           <hr className="border-t-1 border-gray-300 my-2 mt-6" />
 

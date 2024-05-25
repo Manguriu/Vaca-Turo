@@ -39,29 +39,11 @@ export default function HouseDetails() {
 
   return (
     <main className="max-w-screen-xl mx-auto">
-      <div className="sm:px-16 px-6 mx-auto flex max-md:flex-col gap-2 lg:justify-between">
-        <div className="lg:px-4 lg:py-4">
-          <h1 className="text-2xl max-md:text-[18px] font-bold font-Poetsen">
-            {house.detailsImages.Name}
-          </h1>
-        </div>
-        <div className="lg:px-4 lg:py-4">
-          <h1 className="lg:text-2xl font-bold">
-            <span className="line-through text-gray-600 max-md:text-[18px] font-Briem">
-              {house.detailsImages.price.split(' ')[0]}
-            </span>
-            <span className="font-extrabold max-md:text-[20px] font-Briem">
-              {house.detailsImages.price.split(' ')[1]}
-            </span>
-            <span className="font-thin text-xl max-md:text-[18px] font-Briem"> /day</span>
-          </h1>
-        </div>
-      </div>
       <div className="flex py-2 lg:mt-5">
-        <Description detailsImages={house.detailsImages} />
+        <Description detailsImages={house.detailsImages}/>
       </div>
       <div className="lg:mt-10">
-        <OtherDescription OtherDetails={house.OtherDetails} />
+        <OtherDescription OtherDetails={house.OtherDetails} Price={house.detailsImages} />
       </div>
     </main>
   );

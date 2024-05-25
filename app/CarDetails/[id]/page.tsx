@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Description from "../Description";
-import ModalC from "../modalPop/ModalC";
+// import ModalC from "../modalPop/ModalC";
 import { useCarDetails } from "../content/CarDetailsContext";
 import { useParams } from "next/navigation";
 import Skeleton from "react-loading-skeleton";
@@ -23,18 +23,18 @@ export default function CarDetails() {
   const [selectedImage, setSelectedImage] = useState("");
 
   useEffect(() => {
-    console.log("Car Details PAGE NEW:", carDetails);
-    console.log("Search Params ID:", id);
+    // console.log("Car Details PAGE NEW:", carDetails);
+    // console.log("Search Params ID:", id);
 
     if (carDetails.length > 0 && id) {
       const car = carDetails.find(
         (car: any) => car.id === parseInt(id as string)
       );
       if (car) {
-        console.log("Found Car:", car);
+        // console.log("Found Car:", car);
         setDetails(car);
       } else {
-        console.log("Car not found with ID:", id);
+        // console.log("Car not found with ID:", id);
       }
     }
   }, [carDetails, id]);
@@ -88,9 +88,9 @@ export default function CarDetails() {
                 alt=""
                 src={oImg1}
               />
-              <div className=" absolute bottom-0 right-0 focus:ring-1 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center">
+              {/* <div className=" absolute bottom-0 right-0 focus:ring-1 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center">
                 <ModalC />
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -115,6 +115,7 @@ export default function CarDetails() {
         </div>
         <div className="">
           <Description
+          oImg1={oImg1}
             make={make}
             name={Name}
             price={price}

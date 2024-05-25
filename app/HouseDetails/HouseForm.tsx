@@ -20,7 +20,7 @@ export default function HouseForm() {
     email: "",
     phone: "",
     message: "",
-    countryCode: "+1",
+    countryCode: "",
     checkInDate: "",
     checkOutDate: "",
   });

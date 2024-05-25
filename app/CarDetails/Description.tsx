@@ -1,5 +1,6 @@
 import React from "react";
 import DateComponent from "./DateComponent";
+import dateCompMaxMd from "./dateCompMaxMd"
 import Reviews from "./Reviews";
 import Comments from "./Comments";
 import { useState } from "react";
@@ -18,11 +19,10 @@ interface Comments {
   rating: string;
   photo: string;
   dateLocation: string;
-
 }
 
 interface DescriptionProps {
-  make:string;
+  make: string;
   name: string;
   price: string;
   rating: string;
@@ -32,6 +32,7 @@ interface DescriptionProps {
 }
 
 const Description = ({
+  oImg1,
   make,
   name,
   price,
@@ -39,41 +40,30 @@ const Description = ({
   overview,
   features,
   location,
- 
 }: {
-  make:any;
+  oImg1: any;
+  make: any;
   name: any;
   price: any;
   rating: any;
   overview: any;
   features: any;
   location: any;
- 
 }) => {
-  const [showFullText, setShowFullText] = useState(false);
-  const [showAllFeatures, setShowAllFeatures] = useState(false);
-
-  const toggleView = () => {
-    setShowFullText(!showFullText);
-  };
-
-  const toggleFeatures = () => {
-    setShowAllFeatures(!showAllFeatures);
-  };
-
-
-
   return (
     <div className="flex justify-between max-lg:flex-wrap">
       <div className=" py-4 lg:w-[60%] max-lg:w-auto lg:px-4">
-        <h1 className="text-4xl font-bold font-Briem max-md:px-2">{name}</h1>
+        <h1 className="text-4xl max-md:text-2xl font-bold font-Briem max-md:px-2">
+          {name}
+        </h1>
+        <hr className="border-t-1 border-gray-300 my-2 mt-8" />
 
         <h1 className="text-xl lg:hidden mt-4 mb-4 lg:px-1 max-md:px-3">
-          <span className="line-through font-Poetsen"> $59</span>
-          <span className="font-extrabold font-Briem text-[24px]">
-            {price}
-          </span>
-          <span className="font-Josefin"> /day</span>
+          {/* <span className="line-through font-Poetsen">$59
+          </span> */}
+          <span className="font-extrabold font-Briem text-[24px]">{price}</span>
+          <hr className="border-t-1 border-gray-300 my-2 mt-8" />
+          {/* <span className="font-Josefin"> /day</span> */}
         </h1>
         <h1 className="flex text-xl mt-2 items-center gap-1 max-md:px-3">
           <span>
@@ -81,13 +71,13 @@ const Description = ({
           </span>
           <span className="font-bold font-Briem  ">{rating}</span>
         </h1>
-
-        <h2 className=" max-md:hidden mt-10 text-2xl font-semibold font-Briem first-letter:">
+        <hr className="border-t-1 border-gray-300 my-2 mt-8" />
+        {/* <h2 className=" max-md:hidden mt-10 text-2xl font-semibold font-Briem first-letter:">
           Cars Make
         </h2>
         <div className="">
           <h1 className="font-Josefin max-md:text-[18px]">{make}</h1>
-        </div>
+        </div> */}
 
         <h2 className="mt-10 text-2xl font-semibold font-Briem max-md:px-3">
           Overview
@@ -95,12 +85,12 @@ const Description = ({
         <p className="font-Josefin max-md:text-[18px] max-md:px-3">
           {overview}
         </p>
+        <hr className="border-t-1 border-gray-300 my-2 mt-8" />
 
         <h2 className="mt-10 text-2xl underline font-semibold font-Briem max-md:px-3">
           Car Features
         </h2>
         <div className="max-md:px-3">
-          {" "}
           <div className="justify-between mt-4 max-lg:grid-cols-3 w-full">
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <li className="flex items-center">
@@ -143,37 +133,31 @@ const Description = ({
               </li>
             </ul>
           </div>
-          <button
-            className="p-1 italic mb-2 mt-2 text-[18px] underline"
-            onClick={toggleFeatures}
-          >
-            {showAllFeatures ? "Less.." : "More.."}
-          </button>
+          <hr className="border-t-1 border-gray-300 my-2 mt-8" />
         </div>
-
-        <div className="px-4 py-4 lg:hidden ">
-          <h1 className="text-xl max-lg:hidden">
-            <span className="line-through"> $59</span>
-            <span className="font-extrabold">{price}</span>
-            <span> / day</span>
-          </h1>
-          <div className="mt-5 max-lg:w-full">
-            <div className="mb-4 mt-4 ">
-              <h4 className="max-lg:text-2xl text-xl  max-lg:w-fit font-Josefin">
-                Book A car With Us
-              </h4>
-            </div>
-            <div className="py-4 ">
-              <DateComponent />
-            </div>
+        <div className="px-4 py-4 w-auto lg:hidden">
+        <h1 className="text-xl max-lg:hidden">
+          <span className="font-extrabold">{price}</span>
+        </h1>
+        <div className="mt-5 max-lg:w-full">
+          <div className="mb-4 mt-4 max-lg:hidden">
+            <h4 className="max-lg:text-2xl text-xl text-cyan-400 max-lg:w-fit font-Josefin">
+              Book A car With Us
+            </h4>
+          </div>
+          <div className="py-4 max-lg:hidden">
+            <DateComponent price={price} name={name} oImg1={oImg1} />
           </div>
         </div>
+      </div>
 
+        
         <div className="mt-4">
           <div className="max-md:px-2">
             <Reviews />
           </div>
         </div>
+        <hr className="border-t-1 border-gray-300 my-2 mt-8" />
         <h2 className=" mt-10 text-2xl font-semibold font-Briem max-md:px-3">
           Comments
         </h2>
@@ -185,18 +169,16 @@ const Description = ({
       </div>
       <div className="px-4 py-4 w-[40%]">
         <h1 className="text-xl max-lg:hidden">
-          <span className="line-through"> $59</span>
           <span className="font-extrabold">{price}</span>
-          <span> / day</span>
         </h1>
         <div className="mt-5 max-lg:w-full">
           <div className="mb-4 mt-4 max-lg:hidden">
             <h4 className="max-lg:text-2xl text-xl text-cyan-400 max-lg:w-fit font-Josefin">
-              Trip start & Trip end{" "}
+              Book A car With Us
             </h4>
           </div>
           <div className="py-4 max-lg:hidden">
-            <DateComponent />
+            <DateComponent price={price} name={name} oImg1={oImg1} />
           </div>
         </div>
       </div>
